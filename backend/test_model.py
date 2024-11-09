@@ -45,11 +45,15 @@ for country in unique_countries:
             'eventName': event,
             'estimated_interest': score
         })
+    
+    # Print the recommendations for the current country
+    print(f"Top recommendations for {country}:")
+    for event, score in top_recommendations:
+        print(f"  Event: {event}, Estimated Interest: {score:.2f}")
+    print()  # Blank line for readability
 
 # Convert the recommendations list to a DataFrame
 recommendations_df = pd.DataFrame(recommendations_list)
 
 # Save the recommendations to a CSV file
-recommendations_df.to_csv('output.csv', index=False)
-
-print("Recommendations have been saved to output.csv")
+recommendations_df.to_csv('backend/output.csv', index=False)
