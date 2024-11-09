@@ -1,76 +1,76 @@
 country,eventName,estimated_interest
-Österreich,hike,3.2854361607715203
-Österreich,zoo,2.644488155664057
-Österreich,parking,2.2442121729767734
-Österreich,wellness,2.186468698522824
-Österreich,horse riding,2.005361445067271
-Peru,zoo,7.433326458472144
-Peru,trip,6.8082719430033745
-Peru,adventmarkt,5.979937972323034
-Peru,familie,5.957877755925017
-Peru,hotel,5.925414116605841
-Belgien,baden,6.6351263075380045
-Belgien,restaurant,6.534635228596636
-Belgien,hotel,6.439983925880522
-Belgien,trip,6.023874945950035
-Belgien,sehenswuerdigkeiten,5.993869728894997
-Deutschland,wellness,8.10021023450511
-Deutschland,zoo,7.878747659227139
-Deutschland,hospital,6.8487982638974625
-Deutschland,baden,6.545168180755367
-Deutschland,familie,6.195303242766524
-Frankreich,hospital,7.198162227369416
-Frankreich,sehenswuerdigkeiten,7.120112451507271
-Frankreich,baden,6.619510886885927
-Frankreich,shopping,6.615421932818008
-Frankreich,zoo,6.542095327491593
-Dänemark,shopping,6.4448495119745175
-Dänemark,trip,6.268851363205464
-Dänemark,restaurant,6.2519452849991906
-Dänemark,swimming,6.177991315606365
-Dänemark,horse riding,6.094260543837737
-Vereinigtes Königreich,zoo,7.731148015613126
-Vereinigtes Königreich,hospital,6.707321919798225
-Vereinigtes Königreich,baden,6.595969262290522
-Vereinigtes Königreich,activity,6.437865592757139
-Vereinigtes Königreich,museum,6.213400120034199
-Tschechien,hike,7.027816711757347
-Tschechien,museum,6.999160887561219
-Tschechien,wellness,6.522272593467951
-Tschechien,trip,6.375101233181894
-Tschechien,swimming,6.369974965943971
-Luxemburg,bike,10.0
-Luxemburg,baden,7.368450152399039
-Luxemburg,trip,6.868700571676467
-Luxemburg,zoo,6.820375005886185
-Luxemburg,hotel,6.5847120900699485
-Albanien,trip,7.032312284223362
-Albanien,familie,6.724622132554908
-Albanien,swimming,6.695581416361373
-Albanien,shopping,6.318728121439894
-Albanien,baden,6.304673220673177
-Türkei,familie,6.412808655586125
-Türkei,trip,6.3604607231666375
-Türkei,restaurant,6.252752073027179
-Türkei,hospital,6.240156491113161
-Türkei,adventmarkt,6.2228833237284835
-Vereinigte Arabische Emirate,familie,7.244347051064555
-Vereinigte Arabische Emirate,parking,7.182029363485794
-Vereinigte Arabische Emirate,hike,6.721194861174994
-Vereinigte Arabische Emirate,wellness,6.628181665274102
-Vereinigte Arabische Emirate,zoo,6.618674551931301
-Bosnien und Herzegowina,adventmarkt,6.973362458534621
-Bosnien und Herzegowina,restaurant,6.745708286756988
-Bosnien und Herzegowina,familie,6.458481252419436
-Bosnien und Herzegowina,hotel,6.27524389372123
-Bosnien und Herzegowina,baden,6.190793754875508
-Nigeria,bike,6.385709439339552
-Nigeria,wellness,5.692469799451787
-Nigeria,trip,5.542200645119227
-Nigeria,horse riding,5.447936351982923
-Nigeria,zoo,5.389129494524322
-Ungarn,trip,6.5479375256566135
-Ungarn,swimming,6.292685403220284
-Ungarn,shopping,6.249464062661463
-Ungarn,wellness,5.975439261947157
-Ungarn,hospital,5.919292979169795
+Österreich,hike,3.0526658406420166
+Österreich,baden,2.5483966106139064
+Österreich,restaurant,2.2018357431828384
+Österreich,parking,2.1761947210489354
+Österreich,wellness,2.0297237909294603
+Peru,zoo,7.46331018428405
+Peru,familie,7.197024816869448
+Peru,hospital,6.858327292515585
+Peru,swimming,6.8435009131565385
+Peru,activity,6.792928631193269
+Belgien,familie,7.318017657554076
+Belgien,parking,6.723685820172468
+Belgien,hospital,6.397069361159965
+Belgien,museum,6.33811521171566
+Belgien,zoo,6.236927717841743
+Deutschland,horse riding,7.250086025632508
+Deutschland,trip,6.165112354548924
+Deutschland,parking,5.870146503146734
+Deutschland,sehenswuerdigkeiten,5.847373362498211
+Deutschland,shopping,5.718044527669205
+Frankreich,sehenswuerdigkeiten,7.14162121333687
+Frankreich,adventmarkt,6.245848776072976
+Frankreich,horse riding,6.119972361353481
+Frankreich,familie,5.720744587764484
+Frankreich,restaurant,5.664379331092645
+Dänemark,wellness,6.205854833627041
+Dänemark,hotel,6.158184781065193
+Dänemark,baden,6.1266231668928635
+Dänemark,activity,6.0765209952964545
+Dänemark,shopping,6.0705853499923155
+Vereinigtes Königreich,familie,7.041443863341539
+Vereinigtes Königreich,hotel,6.959666347796178
+Vereinigtes Königreich,activity,6.615099903954273
+Vereinigtes Königreich,adventmarkt,6.504869236728986
+Vereinigtes Königreich,zoo,6.344002306825596
+Tschechien,horse riding,6.9412736505948045
+Tschechien,baden,6.74331647149602
+Tschechien,swimming,6.571403748528507
+Tschechien,parking,6.342560123277582
+Tschechien,wellness,6.261699556233566
+Luxemburg,baden,7.568754358075575
+Luxemburg,parking,6.660805987117746
+Luxemburg,shopping,6.171524844327147
+Luxemburg,trip,6.00262119189956
+Luxemburg,familie,5.522932574003268
+Albanien,hike,7.089241950317507
+Albanien,museum,6.822312573595959
+Albanien,baden,6.371365138680509
+Albanien,familie,6.171620544941897
+Albanien,trip,6.152055071681688
+Türkei,familie,7.589923947013547
+Türkei,parking,6.352182861258721
+Türkei,bike,6.0234744531705395
+Türkei,hospital,5.985658638028776
+Türkei,baden,5.770098018333411
+Vereinigte Arabische Emirate,shopping,6.473861775070369
+Vereinigte Arabische Emirate,trip,6.333748296254306
+Vereinigte Arabische Emirate,sehenswuerdigkeiten,6.325914177735779
+Vereinigte Arabische Emirate,parking,6.305848461738217
+Vereinigte Arabische Emirate,familie,6.218696775100431
+Bosnien und Herzegowina,baden,7.227084395278203
+Bosnien und Herzegowina,hotel,6.7049170813413985
+Bosnien und Herzegowina,hospital,6.593134502233811
+Bosnien und Herzegowina,bike,6.484522886493685
+Bosnien und Herzegowina,wellness,6.423439805933135
+Nigeria,swimming,6.250220836780681
+Nigeria,zoo,6.126290051563107
+Nigeria,hospital,6.113109257733676
+Nigeria,museum,5.787665834749348
+Nigeria,parking,5.73947132317139
+Ungarn,activity,7.786204858867226
+Ungarn,bike,6.93936573845512
+Ungarn,parking,6.813881836439499
+Ungarn,trip,6.561398359192694
+Ungarn,horse riding,6.245669247324336
