@@ -8,8 +8,8 @@ class DataLoader:
         reader = Reader(line_format=line_format, sep=sep)
         # Ensure only the necessary columns are passed to Dataset.load_from_df
         #self.surprise_data = Dataset.load_from_df(self.data[['pageTitle (actionDetails 0)','visitorType', 'visitCount', 'continent', 'country']], reader)
-        self.df = self.data.drop('pageTitle (actionDetails 0)', axis=1) 
-        self.target = self.data['pageTitle (actionDetails 0)']
+        self.df = self.data.drop('eventName (actionDetails 1)', axis=1) 
+        self.target = self.data['eventName (actionDetails 1)']
         self.x_train, self.x_test, self.y_train, self.y_test = train_test_split(self.df, self.target, test_size=0.2)
 
     def get_train_test_data(self):
