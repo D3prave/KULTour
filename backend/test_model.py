@@ -1,6 +1,5 @@
 # Import necessary libraries
 import pandas as pd
-from sdv.tabular import CTGAN
 from surprise import Dataset, Reader, SVD
 from surprise.model_selection import train_test_split, cross_validate
 
@@ -8,28 +7,9 @@ from surprise.model_selection import train_test_split, cross_validate
 data = pd.read_csv('backend/prepared_data.csv')
 data.rename(columns={'eventName (actionDetails 1)': 'eventName'}, inplace=True)
 
-# Identify underrepresented countries (classes) based on visit counts
-country_counts = data['country'].value_counts()
-underrepresented_countries = country_counts[country_counts < 5].index
-
-# Separate data into underrepresented and well-represented classes
-underrepresented_data = data[data['country'].isin(underrepresented_countries)]
-well_represented_data = data[~data['country'].isin(underrepresented_countries)]
-
-# Initialize and train the CTGAN model on underrepresented data only
-ctgan = CTGAN(epochs=300)
-ctgan.fit(underrepresented_data[['country', 'eventName', 'visitCount']])
-
-# Generate synthetic data for underrepresented classes
-# Generate a specific number of samples to balance the dataset (e.g., 1000)
-synthetic_data = ctgan.sample(1000)
-
-# Combine well-represented original data with new synthetic data
-augmented_data = pd.concat([well_represented_data, synthetic_data], ignore_index=True)
-
-# Define the Surprise Reader and dataset with augmented data
+# Define the Surprise Reader and dataset
 reader = Reader(rating_scale=(1, 10))
-surprise_data = Dataset.load_from_df(augmented_data[['country', 'eventName', 'visitCount']], reader)
+surprise_data = Dataset.load_from_df(data[['country', 'eventName', 'visitCount']], reader)
 
 # Train-test split
 trainset, testset = train_test_split(surprise_data, test_size=0.2)
@@ -40,8 +20,8 @@ cross_val_results = cross_validate(svd, surprise_data, measures=['RMSE', 'MAE'],
 svd.fit(trainset)
 
 # Get all unique countries and events for generating recommendations
-unique_countries = augmented_data['country'].unique()
-all_events = augmented_data['eventName'].unique()
+unique_countries = data['country'].unique()
+all_events = data['eventName'].unique()
 
 # List to store recommendations for each country
 recommendations_list = []
