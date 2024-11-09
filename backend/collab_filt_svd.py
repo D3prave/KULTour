@@ -1,36 +1,47 @@
-#%% imports 
-import numpy as np 
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn.model_selection import train_test_split, cross_validate
 from surprise import Dataset, Reader, SVD
-from data_loader import DataLoader
+from surprise.model_selection import train_test_split, cross_validate
 
-loader = DataLoader('BACKEND/prepared_data.csv')
+class CollaborativeFiltering:
+    def __init__(self, file_path):
+        self.data = pd.read_csv(file_path)
+        self.data.rename(columns={'eventName (actionDetails 1)': 'eventName'}, inplace=True)
+        self.reader = Reader(rating_scale=(1, 10))
+        self.surprise_data = Dataset.load_from_df(self.data[['country', 'eventName', 'visitCount']], self.reader)
+        self.svd = SVD()
+        self.trainset, self.testset = train_test_split(self.surprise_data, test_size=0.2)
+        self.cross_val_results = cross_validate(self.svd, self.surprise_data, measures=['RMSE', 'MAE'], cv=5, verbose=True)
+        self.svd.fit(self.trainset)
 
-x_train, x_test, y_train, y_test = loader.get_train_test_data()
-data_frame = loader.get_dataframe()
-features, target = loader.get_features_and_target()
-#full_dataset = loader.get_full_dataset()
+    def get_recommendations(self):
+        unique_countries = self.data['country'].unique()
+        all_events = self.data['eventName'].unique()
+        recommendations_list = []
 
-# Example can delete later 
-print(x_train.head())
-print(data_frame.head())
+        for country in unique_countries:
+            recommendations = []
+            for event in all_events:
+                est = self.svd.predict(uid=country, iid=event).est
+                recommendations.append((event, est))
+            
+            recommendations.sort(key=lambda x: x[1], reverse=True)
+            top_recommendations = recommendations[:5]
 
+            for event, score in top_recommendations:
+                recommendations_list.append({
+                    'country': country,
+                    'eventName': event,
+                    'estimated_interest': score
+                })
 
+        return pd.DataFrame(recommendations_list)
 
-#%% training using SVD 
-algo = SVD()
-pipe
-cross_validate(algo, data_train, measures=['RMSE', 'MAE'], cv=3, verbose=True)
+    def save_recommendations(self, output_file):
+        recommendations_df = self.get_recommendations()
+        recommendations_df.to_csv(output_file, index=False)
+        print(f"Recommendations have been saved to {output_file}")
 
-# Fit the model on the full dataset
-trainset = data.build_full_trainset()
-algo.fit(data_train)
-
-# Example prediction for a user and location
-user_id = 'user1'
-location_id = 'location1'
-prediction = algo.predict(user_id, location_id)
-print(prediction)
+# Example usage
+if __name__ == '__main__':
+    collab_filtering = CollaborativeFiltering('backend/prepared_data.csv')
+    collab_filtering.save_recommendations('output.csv')
