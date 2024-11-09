@@ -13,7 +13,7 @@ df = pd.read_csv('backend/original_data.csv', encoding='utf-16',low_memory=False
 #   for column in column_names:
 #     f.write(f"{column}\n")
     
-columns_to_keep = ['eventName (actionDetails 1)', 'visitorType', 'visitCount', 'continent', 'country', 'visitIp']
+columns_to_keep = ['eventName (actionDetails 1)', 'visitorType', 'visitCount', 'continent', 'country']
 
 df = df.loc[:, columns_to_keep]
 unique_event_names = df['eventName (actionDetails 1)'].nunique()
