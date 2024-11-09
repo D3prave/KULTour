@@ -1,21 +1,22 @@
 #%% imports 
-#general/ data visualization
 import numpy as np 
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.model_selection import train_test_split, cross_validate
 from surprise import Dataset, Reader, SVD
+from data_loader import DataLoader
 
+loader = DataLoader('BACKEND/prepared_data.csv')
 
+x_train, x_test, y_train, y_test = loader.get_train_test_data()
+data_frame = loader.get_dataframe()
+features, target = loader.get_features_and_target()
+#full_dataset = loader.get_full_dataset()
 
-#%% loading the data 
-data = Dataset.load_from_df(pd.read_csv('new_data.csv', encoding='utf-16'), Reader(line_format='user item rating', sep=','))
-x = data.drop('rating', axis=1) # adjust the target column -> page title
-y = data['rating']  
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
-
-#%% data visualization 
+# Example can delete later 
+print(x_train.head())
+print(data_frame.head())
 
 
 

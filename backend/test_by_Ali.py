@@ -5,11 +5,30 @@ from IPython.display import IFrame
 from IPython.core.display import display_html
 
 
-data = pd.read_csv("prepared_data.csv")
+#data = pd.read_csv("backend/original_data.csv", encoding='utf-16',low_memory=False)
+data = pd.read_csv('original_data.csv', encoding='UTF-16')
+columns_to_keep = ['eventName (actionDetails 1)', 'visitorType', 'visitCount', 'continent', 'country', 'visitorId']
 
-columns = [""]
-
+data = data.loc[:, columns_to_keep]
 print(data)
+
+new_user_id = "asjfasjdkaskd"
+user_country = "Belgien"
+
+if "dcdde833cca8be02" in data["visitorId"].values:
+    if user_country is None:
+        raise ValueError("User has no country value.")
+
+    print(data[data['country'].values == user_country])
+    most_popular_event = (data[data['country'] == user_country]
+                          .groupby('eventName (actionDetails 1)')['visitorId']
+                          .count()
+                          .idxmax())
+    
+    print(most_popular_event)
+else:
+    print("no")
+
 #
 #profile = ProfileReport(data, title="Profiling Report")
 #
