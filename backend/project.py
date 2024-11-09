@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv('good_data.csv', encoding='utf-16', low_memory=False)
+df = pd.read_csv('original_data.csv', encoding='utf-16', low_memory=False)
 print(df.head())
 # print(f"Number of columns before dropping: {df.shape[1]}")
 # df.dropna(axis=1, how='all', inplace=True)
@@ -16,9 +16,10 @@ print(df.head())
     
 columns_to_keep = ['pageTitle (actionDetails 0)', 'visitorType', 'visitCount', 'continent', 'country']
 
+df = df[df['country'] != 'Österreich']
 df = df.loc[:, columns_to_keep]
 
 # Print the updated DataFrame to confirm
 print("Updated DataFrame with only selected columns:")
 print(df)
-df.to_csv('test123.csv', index=False)
+df.to_csv('prepared_data.csv', index=False)
