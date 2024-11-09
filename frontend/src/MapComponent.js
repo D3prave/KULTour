@@ -43,13 +43,12 @@ function MapComponent() {
   };
 
   return (
-    <div style={{ display: 'flex', position: 'relative', height: '500px' }}>
-      {/* Map container with gap on the left */}
-      <MapContainer center={[47.5162, 14.5501]} zoom={7.3} style={{ height: "90vh", width: "135vh" }}>
+    <div style={{ position: 'relative', height: '100vh' }}>
+      {/* Map container */}
+      <MapContainer center={[47.5162, 14.5501]} zoom={7.3} style={{ height: "100%", width: "100%" }}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
-          
         />
         {cities.map((city, index) => (
           <React.Fragment key={index}>
@@ -87,10 +86,17 @@ function MapComponent() {
         )}
       </MapContainer>
 
-      {/* Card component with sliding effect */}
+      {/* Card component with smooth rounded corners, overlaying the map */}
       {selectedCity && (
-        <div className="city-card" style={{paddingLeft: '20px'}}>
-          <Card style={{ width: '18rem'}}>
+        <div className="city-card" style={{
+          position: 'absolute',
+          top: '10%',  // You can adjust this to control vertical positioning
+          right: '5%',  // Positions the card 5% from the right side
+          zIndex: 1000,
+          width: '18rem',
+          paddingLeft: '20px'
+        }}>
+          <Card style={{ borderRadius: '15px', backgroundColor: "white", paddingLeft:"10px",  paddingRight:"10px"}}>
             <Card.Img variant="top" src={selectedCity.imageUrl} alt={selectedCity.name} />
             <Card.Body>
               <Card.Title>{selectedCity.name}</Card.Title>
