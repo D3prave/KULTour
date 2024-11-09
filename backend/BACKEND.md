@@ -64,3 +64,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 data manipulation
 We encoded the features. 
 data visualization add description 
+
+STILL TODO: 
+finish collab_filtering 
+have a look at the visual
+finish the api => we need the collab in a class
