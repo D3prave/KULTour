@@ -16,7 +16,6 @@ df = pd.read_csv('backend/original_data.csv', encoding='utf-16',low_memory=False
 columns_to_keep = ['eventName (actionDetails 1)', 'visitorType', 'visitCount', 'continent', 'country', 'visitIp']
 
 df = df.loc[:, columns_to_keep]
-df.sort_values(by='eventName (actionDetails 1)', inplace=True)
 unique_event_names = df['eventName (actionDetails 1)'].nunique()
 df.dropna(subset=['eventName (actionDetails 1)'], inplace=True)
 df = df[~df['eventName (actionDetails 1)'].str.startswith('Initial')]
@@ -63,8 +62,6 @@ df['eventName (actionDetails 1)'] = df['eventName (actionDetails 1)'].str.replac
 
 df = df[~df['eventName (actionDetails 1)'].str.startswith('poi')]
 
-
+df.sort_values(by='eventName (actionDetails 1)', inplace=True)
 df.to_csv('backend/prepared_data.csv', index=False)
 
-
-df.sort_values(by='eventName (actionDetails 1)', inplace=True)
