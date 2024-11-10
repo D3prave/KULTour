@@ -1,75 +1,72 @@
 TODOS: 
-CHECK API 
+add how problems solving down in readme, encoder
+add github 
+API kinda weird  
 CHECK DATA VISUALIZATION 
-DO README 
 DO COMMENTS 
-IF SOMEONE IS NEW AT AUSTRIA, ONLY RECOMMEND MUSEUM, SIGHTSEEING, RESTAURANT
 
-WHAT WE ALSO DID: 
-data manipulation
-We encoded the features. 
-data visualization add description 
-
-# Project Title: Ski Resort Management System
-
-## Overview
-Welcome to the Ski Resort Management System! This project aims to enhance the experience of visitors at ski resorts by efficiently managing skier distribution, reducing waiting times, and providing personalized recommendations.
+# Project Title: Personalization by culture and personality 
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [Installation](#installation)
-- [Usage](#usage)
 - [Features](#features)
+- [Use Case](#usecase)
+- [Problems](#problems)
 - [Technologies Used](#technologies-used)
 - [Contributors](#contributors)
-- [License](#license)
+- [Data set](#dataset)
 
 ## Introduction
-The Ski Resort Management System is designed to optimize the distribution of skiers across various resorts. By analyzing historical and real-time data, the system provides insights into visitor patterns, predicts high-traffic areas, and suggests optimal routes. This ensures a smoother experience for visitors, with minimal waiting times and reduced overcrowding.
+Welcome to the Backend-ReadME-file of the Eternals for the 4th Challenge -Personalization by culture and personality. Millions of tourists from all over the world visit Austria every year. We want to optimize their experience in Austria by making data-based assumptions about their preferences. We will tackle this exciting challenge using machine learning. We will create a Collaboration Filtering with Singular Value Decomposition. But before, we will have to investigate our dataset a bit, do some data visualization to get a rough feeling about our dataset, and of course clean it properly. 
+In the end we want to provide an API-endpoint for the Frontend-Team, such that the data-based decision for every individual person can be accessed in the web application. 
 
-## Installation
-To set up the project locally, follow these steps:
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/yourusername/ski-resort-management.git
-
-
-## Usage
+## Use Case 
 Here's how to use the Ski Resort Management System:
 
-1. **Data Loader**: The `DataLoader` class in `data_loader.py` handles data loading and preprocessing. It reads data from a CSV file, splits it into training and testing sets, and prepares the data for model training.
+1. **app.py**: The `DataLoader` class in `data_loader.py` handles data loading and preprocessing. It reads data from a CSV file, splits it into training and testing sets, and prepares the data for model training.
 
-2. **Model Training**: Use `train_model.py` to train the recommendation model. It utilizes collaborative filtering to provide personalized location recommendations based on user data.
+2. **collab_filt_svd.py**: Use `train_model.py` to train the recommendation model. It utilizes collaborative filtering to provide personalized location recommendations based on user data.
 
-3. **Analysis**: `analyze_data.py` allows for the analysis of visitor data, providing insights into visitor patterns and behavior.
+3. **data_loader.py**: `analyze_data.py` allows for the analysis of visitor data, providing insights into visitor patterns and behavior.
 
-## Features
-- **Predictive Analytics**: Forecast high-traffic areas and times to improve skier distribution.
-- **Real-Time Monitoring**: Collect real-time data on skier locations and wait times.
-- **Dynamic Recommendations**: Provide personalized recommendations to visitors based on their preferences and past behavior.
-- **Data Visualization**: Visualize visitor patterns and model performance for better decision-making.
+4. **data_prep.py**: `analyze_data.py` allows for the analysis of visitor data, providing insights into visitor patterns and behavior.
+
+5. **data_visualization.py**: `analyze_data.py` allows for the analysis of visitor data, providing insights into visitor patterns and behavior.
+
+6. **original_data.csv**: `analyze_data.py` allows for the analysis of visitor data, providing insights into visitor patterns and behavior.
+
+7. **output.csv**: `analyze_data.py` allows for the analysis of visitor data, providing insights into visitor patterns and behavior.
+
+8. **prepared_data.csv**: `analyze_data.py` allows for the analysis of visitor data, providing insights into visitor patterns and behavior.
+
+## Problems 
+As always in such a Challenge, there will be (unpredictable) problems that might occur in the process of the project. It was important that we faced the problems and didn´t resign on them and in the end, we solved all of them in our individual way: 
+- **'Sparse' Features**:   The data set provided a lot of "empty" features. Additionally, a lot of them weren´t correlated to our problem. We got rid of those sparse columns while cleaning and investing the data.
+- **Small Data Set**:      The more data the better. The main problem for our machine  learning task was a more or less small data set of around 250 after the cleansing. We managed to upsample the train data set to get a more reliable algorithm.
+- **Unbalanced Data Set**: Another quite tricky option was the unbalanceness of the data set. Roughly 85% of the cleaned data consisted of Austrian data points, whereas other countries are drastically underrepresented. SMOTE took care of that. 
+- **Event_names**: Our target feature, the event names often referred to same or similar things, but have been written in different ways. In order for that, we encoded this feature and basically merged similar events. 
 
 ## Technologies Used
-- **Python**
-- **Pandas**
-- **Scikit-learn**
-- **Surprise** (for collaborative filtering)
-- **Flask** (for web interface)
-- **Matplotlib** (for data visualization)
+- **Python** 
+- **Pandas**         (Dataframe)
+- **Scikit-learn** 
+   - **Surprise**    (for collaborative filtering)
+- **Matplotlib**     (for data visualization)
+- **Seaborn**        (for data visualization)
+- **Squarify**       (for data visualization-Tree Map)
+- **Flask**          (for API)
+- **Pickle**         (for API (loading ml-algorithms))
 
 ## Contributors
-- **Eternals** - GitHub: `yourusername`
-- **Teammate 1** - GitHub: `teammate1`
-- **Teammate 2** - GitHub: `teammate2`
-- **Teammate 3** - GitHub: `teammate3`
+- **Eternals** - GitHub_Repository: `https://github.com/denishotii/TourismTechnologyFestival`
+- **Denis Hoti** - GitHub: `denishotii`
+- **Jakub Wisniewski** - GitHub: `D3prave`
+- **Lukas Lang** - GitHub: `GezaLang`
 - **Teammate 4** - GitHub: `teammate3`
 - **Teammate 5** - GitHub: `teammate3`
 - **Teammate 6** - GitHub: `teammate3`
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-
+## Data set 
+The original data set was published by the organisators of the Tourism Technology Hackathon 2024 on a privat basis. We promise to delete the data set after the 10.11.2024.  
 ################
 
