@@ -29,8 +29,8 @@ const FirstTimeVisitor = () => {
     };
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'flex-start', top: '20px',   left: '80px' }}>
-            <label style={{ backgroundColor: 'white', padding: '5px', borderRadius: '4px'}}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', top: '20px', left: '80px' }}>
+            <label className='' style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '5px', padding: '5px', borderRadius: '4px', backgroundColor: 'none', color: '#fff', fontWeight: 'bold', textShadow: '-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black' }}>
                 <input
                     type="checkbox"
                     checked={firstTimeVisitor}
@@ -38,10 +38,7 @@ const FirstTimeVisitor = () => {
                 />
                 First Time Visitor
             </label>
-            <button onClick={updateVisitorStatus} style={{ marginLeft: '10px' }}>OK</button>
         </div>
-
-
     )
 
 };

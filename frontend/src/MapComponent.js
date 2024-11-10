@@ -106,14 +106,10 @@ function MapComponent() {
           onChange={handleSearchChange}
           className='searchBar'
         />
-        jjj
+        <FirstTimeVisitor />
       </div>
       <div>
 
-    </div>
-
-    <div style={{ position: 'absolute', top: '10px', left: '500px', zIndex: 1000 }}>
-      <FirstTimeVisitor />
     </div>
 
 

@@ -22,7 +22,35 @@ To set up the project locally, follow these steps:
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/yourusername/tourism-personalization.git
-.... 
+
+2. **If npm is installed, check:**:
+```bash
+   npm -v
+   node -v
+```
+3. **Create a New React Project**:
+```bash
+   npx create-react-app my-react-app
+```
+4. ** Navigate to the Project Directory**:
+```bash
+   cd my-react-app
+```
+5. **Start the Development Server**:
+```bash
+   npm start
+```
+6. Open the Project in Your Code Editor
+Open the project directory (my-react-app) in your preferred code editor, like VS Code.
+
+7. Customize and Build
+You can edit src/App.js or add new components under the src folder.
+To add new packages or libraries, use
+```bash
+  npm install <package-name>
+```
+which will add the package to node_modules and update package.json.
+
 
 ## Usage
 Here's how to use the MapComponent:
