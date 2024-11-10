@@ -5,6 +5,7 @@ import 'leaflet/dist/leaflet.css';
 import axios from 'axios';
 import L from 'leaflet';
 import { FaTimes } from 'react-icons/fa';
+import FirstTimeVisitor from './FirstTimeVisitor'; // Adjust the path based on the file location
 
 const { BaseLayer, Overlay } = LayersControl;
 
@@ -17,14 +18,16 @@ function MapComponent() {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredPlaces, setFilteredPlaces] = useState([]);
   const [category, setCategory] = useState('');
+  const [isChecked, setIsChecked] = useState(false); // Declare 'isChecked' state here.
+
 
   useEffect(() => {
     axios.get('https://ipapi.co/json/')
       .then(response => {
         const countryName = response.data.country_name;
         console.log('User Country:', countryName);
-        // fetchCategory(countryName.toLowerCase());
-        fetchCategory("albania");
+        fetchCategory(countryName.toLowerCase());
+        // fetchCategory("albania");
       })
       .catch(error => console.error('Error fetching user location', error));
   }, []);
@@ -37,6 +40,10 @@ function MapComponent() {
         console.log('Category:', category);
       })
       .catch(error => console.error('Error fetching category', error));
+  };
+
+  const handleCheckboxChange = () => {
+    setIsChecked(prevState => !prevState); // Toggle checkbox state
   };
 
   useEffect(() => {
@@ -99,9 +106,20 @@ function MapComponent() {
           onChange={handleSearchChange}
           className='searchBar'
         />
+        jjj
       </div>
+      <div>
+
+    </div>
+
+    <div style={{ position: 'absolute', top: '10px', left: '500px', zIndex: 1000 }}>
+      <FirstTimeVisitor />
+    </div>
+
+
 
       <MapContainer center={[47.5162, 14.5501]} zoom={7.3} style={{ height: "100vh", width: "100%" }}>
+
       <LayersControl position="topright">
         <BaseLayer name="Google Streets" checked={true}>
           <TileLayer
@@ -116,6 +134,7 @@ function MapComponent() {
             maxZoom={20}
             subdomains={['mt0', 'mt1', 'mt2', 'mt3']}
           />
+
         </BaseLayer>
           
 
