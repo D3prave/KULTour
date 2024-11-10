@@ -62,6 +62,8 @@ df['eventName (actionDetails 1)'] = df['eventName (actionDetails 1)'].str.replac
 df['eventName (actionDetails 1)'] = df['eventName (actionDetails 1)'].str.replace(r'(?i).*(familie).*', 'family', regex=True)
 df = df[~df['eventName (actionDetails 1)'].str.startswith('poi')]
 
+
+#%%countries to english 
 df['country'] = df['country'].str.replace(r'(?i).*deutschland.*', 'germany', regex=True)
 df['country'] = df['country'].str.replace(r'(?i).*Österreich.*', 'austria', regex=True)
 df['country'] = df['country'].str.replace(r'(?i).*schweiz.*', 'switzerland', regex=True)
@@ -106,6 +108,7 @@ df['country'] = df['country'].str.replace(r'(?i).*wales.*', 'wales', regex=True)
 df['country'] = df['country'].str.replace(r'(?i).*Vereinigte Arabische Emirate.*', 'united arab emirates', regex=True)
 df['country'] = df['country'].str.replace(r'(?i).*peru*', 'peru', regex=True)
 
+##
 df.sort_values(by='eventName (actionDetails 1)', inplace=True)
 df.to_csv('backend/prepared_data.csv', index=False)
 
