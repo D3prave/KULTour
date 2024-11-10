@@ -1,4 +1,4 @@
-# Project Title: Personalization by culture and personality 
+# KULTour: Personalization by culture and personality 
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -10,8 +10,8 @@
 - [Contributors](#contributors)
 - [Data set](#dataset)
 
-## Introduction
-Welcome to the Backend ReadMe file for the Eternals' 4th Challenge: Personalization by Culture and Personality.
+## About KULTour
+Attention: Do you want to explore the world? KULTour is the perfect app for you!
 
 Every year, millions of tourists from around the world visit Austria. Our goal is to enhance their experience by making data-driven assumptions about their preferences. To tackle this exciting challenge, we will employ machine learning techniques, specifically using Collaborative Filtering with Singular Value Decomposition (SVD).
 
@@ -19,11 +19,47 @@ Before diving into the modeling, we'll thoroughly investigate our dataset, perfo
 
 Our ultimate aim is to provide an API endpoint for the Frontend Team, enabling data-driven decisions for each individual user to be accessed through the web application.
 
+## Requirements 
+- We recommend using Docker 
+- KULTour uses NodeJS, Google API and Python 
+- KULTour uses TAILWIND CSS framework, for UI
+
+## Commands
+
+- First of all we have to install all dependencies needed for the project using this composer command: 
+cd frontend
+npm install
+
+- To generate a new .env file for SIA, you should run this command: 
+mv .env.example .env
+
+- To start the frontend run:
+cd frontend
+npm start
+
+- To run the Google API Server run (in a new terminal):
+cd frontend
+node src/server.js
+
+- To install all the Backend requirements:
+pip install -r requirements.txt
+
+- To run the Backend run:
+python backend/app.py
 
 ## Use Case
 
 Here's a guide on how to handle the various files in our project:
 
+Frontend:
+1. **App.js**: 
+   Main React App File
+2. **MapContent.js**: 
+   Handles the Google Map UI, and request to take the API.
+3. **server.js**:
+    Server side API to make request to Google API
+
+Backend:
 1. **app.py**: 
    This file serves as the API access point for our backend code. It handles requests and directs them to the appropriate functions.
 
@@ -89,6 +125,25 @@ In the following we will provide some pdf files and their explaination.
 - **Squarify**       (for data visualization-Tree Map)
 - **Flask**          (for API)
 - **Pickle**         (for API (loading ml-algorithms))
+- **React**: A JavaScript library for building user interfaces.
+- **React-Leaflet**: A React wrapper for Leaflet, a leading open-source JavaScript library for mobile-friendly interactive maps.
+- **Axios**: A promise-based HTTP client for the browser and Node.js.
+- **Bootstrap**: A popular CSS framework for developing responsive and mobile-first websites.
+- **Font Awesome**: A toolkit for vector icons and social logos.
+
+## API Endpoints
+- **GET `https://ipapi.co/json/`**: Fetches the user's location based on their IP address.
+- **POST `http://127.0.0.1:5000/category`**: Fetches the recommended category based on the user's country.
+- **GET `http://localhost:5001/api/place?category={category}`**: Fetches places based on the recommended category.
+- **GET `Google API`**: Fetches places description, pictures and addresses from Google Maps
+- [Google Places API](https://developers.google.com/maps/documentation/places/web-service/overview)
+
+## Contributors
+- **Eternals** - GitHub_Repository: `https://github.com/denishotii/TourismTechnologyFestival`
+
+- **Southik Nath Banerjee** - GitHub: `Southik Nath Banerjee`
+- **Veronika Rybak** - GitHub: `vrnccr`
+- **Denis Hoti** - GitHub: `denishotii`
 
 ## Contributors
 - **Eternals** - GitHub_Repository: `https://github.com/denishotii/TourismTechnologyFestival`
@@ -103,3 +158,11 @@ In the following we will provide some pdf files and their explaination.
 The original data set was published by the organisators of the Tourism Technology Hackathon 2024 on a privat basis. We promise to delete the data set after the 10.11.2024.  
 ################
 
+
+## Project Organization
+
+    ├── backend                         <- backend related stuff
+    ├── frontend                        <- frontend related stuff
+    └── .env.example           <- API Keys
+
+---
