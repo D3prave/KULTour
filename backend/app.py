@@ -1,43 +1,43 @@
 from flask import Flask, jsonify, request
 import pickle
+from collaborative_filtering import CollaborativeFiltering
 
 app = Flask(__name__)
 
-# Load the DataLoader and CollaborativeFiltering objects
-with open('backend/data_loader.pkl', 'rb') as f:
-    loader = pickle.load(f)
-
-with open('backend/collab_filtering.pkl', 'rb') as f:
-    collab_filtering = pickle.load(f)
+# Initialize the CollaborativeFiltering object
+collab_filtering = CollaborativeFiltering('backend/prepared_data.csv')
 
 # Define Resources
 @app.route('/data', methods=['GET'])
 def get_data():
-    data_frame = loader.get_dataframe()
+    data_frame = collab_filtering.data
     data_json = data_frame.to_json(orient='records')
     return jsonify(data_json)
 
 @app.route('/train_test_data', methods=['GET'])
 def get_train_test_data():
-    x_train, x_test, y_train, y_test = loader.get_train_test_data()
+    x_train, x_test, y_train, y_test = collab_filtering.trainset, collab_filtering.testset, collab_filtering.trainset, collab_filtering.testset
     response = {
-        'x_train': x_train.to_json(orient='records'),
-        'x_test': x_test.to_json(orient='records'),
-        'y_train': y_train.to_json(orient='records'),
-        'y_test': y_test.to_json(orient='records')
+        'x_train': x_train,
+        'x_test': x_test,
+        'y_train': y_train,
+        'y_test': y_test
     }
     return jsonify(response)
 
 @app.route('/recommendation', methods=['POST'])
 def get_recommendation():
     user_data = request.get_json()
-    recommendation = collab_filtering.get_recommendation(user_data['user_id'])
-    return jsonify({'recommendation': recommendation})
+    recommendations_df = collab_filtering.get_recommendations()
+    recommendations_json = recommendations_df.to_json(orient='records')
+    return jsonify({'recommendations': recommendations_json})
 
 @app.route('/category', methods=['POST'])
 def get_category():
     user_data = request.get_json()
-    category = collab_filtering.get_category(user_data['user_id'])
+    recommendations_df = collab_filtering.get_recommendations()
+    user_recommendations = recommendations_df[recommendations_df['country'] == user_data['user_id']]
+    category = user_recommendations['eventName'].iloc[0] if not user_recommendations.empty else "No recommendations available"
     return jsonify({'category': category})
 
 if __name__ == '__main__':
