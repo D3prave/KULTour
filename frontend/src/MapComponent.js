@@ -25,9 +25,9 @@ function MapComponent() {
     axios.get('https://ipapi.co/json/')
       .then(response => {
         const countryName = response.data.country_name;
-        console.log('User Country:', countryName);
+        // console.log('User Country:', countryName);
         fetchCategory(countryName.toLowerCase());
-        // fetchCategory("albania");
+        // fetchCategory("germany");
       })
       .catch(error => console.error('Error fetching user location', error));
   }, []);
