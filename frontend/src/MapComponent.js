@@ -1,35 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, Circle, GeoJSON } from 'react-leaflet';
-import { Card } from 'react-bootstrap';
+import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from 'react-leaflet';
+import { Card, FormControl } from 'react-bootstrap';
 import 'leaflet/dist/leaflet.css';
 import axios from 'axios';
-import L from 'leaflet';  // Import Leaflet to use L.divIcon for custom markers
+import L from 'leaflet';
 
-// City data
-const cities = [
-  { 
-    name: 'Vienna', 
-    coordinates: [48.2082, 16.3738], 
-    description: 'Capital of Austria, known for its artistic and cultural heritage.',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d1/Google_Maps_pin.svg' // Custom image for button
-  },
-  { 
-    name: 'Salzburg', 
-    coordinates: [47.8095, 13.0550], 
-    description: 'Famous for being Mozart’s birthplace and its baroque architecture.',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d1/Google_Maps_pin.svg' // Custom image for button
-  },
-  { 
-    name: 'Innsbruck', 
-    coordinates: [47.2692, 11.4041], 
-    description: 'Known for its ski resorts and winter sports.',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d1/Google_Maps_pin.svg' // Custom image for button
-  },
-];
+const pinImageUrl = 'https://upload.wikimedia.org/wikipedia/commons/d/d1/Google_Maps_pin.svg'; // Custom PIN image
 
 function MapComponent() {
-  const [selectedCity, setSelectedCity] = useState(null);
+  const [selectedPlace, setSelectedPlace] = useState(null);
   const [austriaGeoJson, setAustriaGeoJson] = useState(null);
+  const [places, setPlaces] = useState([]);
+  const [searchTerm, setSearchTerm] = useState(''); // Search term for filtering places
+  const [filteredPlaces, setFilteredPlaces] = useState([]); // Filtered places based on search term
+
+  useEffect(() => {
+    // Fetch the user's IP address and country
+    axios.get('https://ipapi.co/json/')
+      .then(response => {
+        const userCountry = response.data.country_name;
+        console.log('User Country:', userCountry);
+        // You can save the country name in a state variable if needed
+      })
+      .catch(error => console.error('Error fetching user location', error));
+  }, []);
+
+  const category = 'bar'; // Default category
 
   useEffect(() => {
     // Fetch the Austria GeoJSON data
@@ -40,8 +36,31 @@ function MapComponent() {
       .catch(error => console.error('Error loading the GeoJSON file', error));
   }, []);
 
-  const handleViewDetails = (city) => {
-    setSelectedCity(city);
+  useEffect(() => {
+    // Fetch places based on the category
+    axios.get(`http://localhost:5000/api/place?category=${category}`)
+      .then(response => {
+        setPlaces(response.data);
+        setFilteredPlaces(response.data); // Initialize filtered places with all places
+      })
+      .catch(error => console.error('Error fetching places', error));
+  }, [category]);
+
+  useEffect(() => {
+    // Filter places based on the search term
+    setFilteredPlaces(
+      places.filter(place =>
+        place.name.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    );
+  }, [searchTerm, places]);
+
+  const handleViewDetails = (place) => {
+    setSelectedPlace(place);
+  };
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
   };
 
   const getColor = (population) => {
@@ -65,62 +84,51 @@ function MapComponent() {
   };
 
   return (
-    <div style={{ display: 'flex', position: 'relative', height: '500px' }}>
+    <div style={{ position: 'relative', height: '100vh' }}>
+      {/* Search bar */}
+      <div className='searchSection'>
+        <FormControl
+          type="text"
+          placeholder="Search place..."
+          value={searchTerm}
+          onChange={handleSearchChange}
+          className='searchBar'
+        />
+      </div>
+
       <MapContainer center={[47.5162, 14.5501]} zoom={7.3} style={{ height: "100vh", width: "100%" }}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
         />
         
-        {cities.map((city) => (
-          <React.Fragment key={city.name}>
-            <Marker 
-              position={city.coordinates}
-              icon={L.divIcon({
-                className: 'leaflet-custom-icon',  // You can use this class to style the image
-                html: `<img src="${city.imageUrl}" style="width: 30px; height: 30px;"/>` // Custom marker icon as image
-              })}
-            >
-              <Popup>
-                <div>
-                  <h6>{city.name}</h6>
-                  <p>{city.description}</p>
-                  <button 
-                    onClick={() => handleViewDetails(city)}
-                    style={{ display: 'flex', alignItems: 'center', padding: '8px', backgroundColor: '#007bff', color: 'white', border: 'none', borderRadius: '4px' }}
-                  >
-                    <img 
-                      src={city.imageUrl}  // Use the image URL from city data
-                      alt="View Details" 
-                      style={{ width: '20px', height: '20px', marginRight: '8px' }} 
-                    />
-                    View Details
-                  </button>
-                </div>
-              </Popup>
-            </Marker>
-
-            <div className="circle-container" style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }}>
-              
-              <button 
-                onClick={() => handleViewDetails(city)} 
-                style={{
-                  position: 'absolute',
-                  top: '50%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  padding: '8px 16px',
-                  backgroundColor: '#007bff',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '4px',
-                  zIndex: 10,
-                }}
-              >
-                View Details
-              </button>
-            </div>
-          </React.Fragment>
+        {filteredPlaces.map((place) => (
+          <Marker 
+            key={place.name}
+            position={[place.location.lat, place.location.lng]}
+            icon={L.divIcon({
+              className: 'leaflet-custom-icon',
+              html: `<img src="${pinImageUrl}" style="width: 30px; height: 30px;"/>`
+            })}
+          >
+            <Popup>
+              <div>
+                <h6>{place.name}</h6>
+                <p>{place.description}</p>
+                <button 
+                  onClick={() => handleViewDetails(place)}
+                  style={{ display: 'flex', alignItems: 'center', padding: '8px', backgroundColor: '#007bff', color: 'white', border: 'none', borderRadius: '4px' }}
+                >
+                  <img 
+                    src={pinImageUrl}
+                    alt="View Details" 
+                    style={{ width: '20px', height: '20px', marginRight: '8px' }} 
+                  />
+                  View Details
+                </button>
+              </div>
+            </Popup>
+          </Marker>
         ))}
 
         {austriaGeoJson && (
@@ -131,14 +139,14 @@ function MapComponent() {
         )}
       </MapContainer>
 
-      {selectedCity && (
-        <div className="city-card" style={{ paddingLeft: '20px' }}>
-          <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={selectedCity.imageUrl} alt={selectedCity.name} />
+      {selectedPlace && (
+        <div className="location-card">
+          <Card className='location-inner-card'>
+            <Card.Img variant="top" src={selectedPlace.photo} alt={selectedPlace.name} />
             <Card.Body>
-              <Card.Title>{selectedCity.name}</Card.Title>
-              <Card.Text>{selectedCity.description}</Card.Text>
-              <button onClick={() => setSelectedCity(null)} style={{ padding: '6px 12px', backgroundColor: '#6c757d', color: 'white', border: 'none', borderRadius: '4px' }}>
+              <Card.Title>{selectedPlace.name}</Card.Title>
+              <Card.Text>{selectedPlace.description}</Card.Text>
+              <button onClick={() => setSelectedPlace(null)} style={{ padding: '6px 12px', backgroundColor: '#6c757d', color: 'white', border: 'none', borderRadius: '4px' }}>
                 Close
               </button>
             </Card.Body>

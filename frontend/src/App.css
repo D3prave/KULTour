@@ -77,7 +77,7 @@ h1 {
 /* Optional: Style the container */
 .App {
   background-color: white; /* Light background */
-  padding: 20px;
+  padding: 0px;
 }
 /* App.css */
 
@@ -132,4 +132,38 @@ h2 {
 
 .cta-button:hover {
   background-color: #fc4a1a;
+}
+
+.searchSection {
+  position: absolute;
+  top: 20px;
+  left: 60px;
+  z-index: 1000;
+}
+
+.searchBar {
+  border-radius: 15px;
+  padding: 5px;
+  width: 200px;
+  height: 25px;
+  border: none;
+  outline: none;
+}
+
+.location-card {
+  position: absolute;
+  top: 10%;
+  right: 2%;
+  z-index: 1000;
+  width: 18rem;
+  height: 50vh;
+  padding-left: 20px;
+}
+
+.location-inner-card{
+  border-radius: 15px;
+  background-color: white;
+  padding-left: 10px;  
+  padding-right: 10px;
+  height: 100%;
 }
