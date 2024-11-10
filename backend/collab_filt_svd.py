@@ -4,7 +4,7 @@ from surprise.model_selection import train_test_split, cross_validate
 import random
 
 class CollaborativeFiltering:
-    def __init__(self, file_path):
+    def __init__(self, file_path, first_time_visitor=False):
         self.data = pd.read_csv(file_path)
         self.data.rename(columns={'eventName (actionDetails 1)': 'eventName'}, inplace=True)
         
@@ -21,6 +21,10 @@ class CollaborativeFiltering:
         self.svd = SVD()
         self.cross_val_results = cross_validate(self.svd, self.surprise_data, measures=['RMSE', 'MAE'], cv=5, verbose=True)
         self.svd.fit(self.trainset)
+
+        # Initialize allowed categories and visitor status
+        self.allowed_categories = ["HOTEL", "RESTAURANT", "MUSEUM", "ATTRACTIONS"]
+        self.first_time_visitor = first_time_visitor
 
     def balance_data(self):
         # Check the distribution of each country
@@ -59,6 +63,13 @@ class CollaborativeFiltering:
         for country in unique_countries:
             recommendations = []
             for event in all_events:
+                # Filter events based on allowed categories if the visitor is a first-time visitor
+                if self.first_time_visitor:
+                    # Check if the event belongs to one of the allowed categories for first-time visitors
+                    if not any(category in event.upper() for category in self.allowed_categories):
+                        continue  # Skip events not in the allowed categories
+
+                # Predict the estimated interest for each event
                 est = self.svd.predict(uid=country, iid=event).est
                 recommendations.append((event, est))
             
@@ -84,3 +95,8 @@ class CollaborativeFiltering:
         recommendations_df = self.get_recommendations()
         recommendations_df.to_csv(output_file, index=False)
         print(f"Recommendations have been saved to {output_file}")
+        
+# Usage
+#collab_filtering = CollaborativeFiltering('backend/prepared_data.csv')
+#collab_filtering.get_recommendations()
+#collab_filtering.save_recommendations('recommendations.csv')
