@@ -25,9 +25,14 @@ app.get('/api/place', async (req, res) => {
     const places = filteredPlaces.map(place => ({
       name: place.name,
       location: place.geometry.location,
-      photo: place.photos ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${place.photos[0].photo_reference}&key=${process.env.GOOGLE_API_KEY}` : null,
+      photo: place.photos ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${place.photos[0].photo_reference}&key=AIzaSyDLu-aSNQ0psmuaZjVyzJFJ_ZKyhgB_qC8` : null,
       rating: place.rating,
-      description: place.formatted_address
+      description: place.formatted_address,
+      opening_hours: place.opening_hours ? place.opening_hours.weekday_text : null,
+      user_ratings_total: place.user_ratings_total,
+      price_level: place.price_level,
+      website: place.website,
+      phone_number: place.formatted_phone_number
     }));
 
     if (places.length > 0) {

@@ -4,6 +4,7 @@ import { Card, FormControl } from 'react-bootstrap';
 import 'leaflet/dist/leaflet.css';
 import axios from 'axios';
 import L from 'leaflet';
+import { FaTimes } from 'react-icons/fa';
 
 const { BaseLayer, Overlay } = LayersControl;
 
@@ -159,16 +160,47 @@ function MapComponent() {
       {selectedPlace && (
         <div className="location-card">
           <Card className='location-inner-card' style={{ paddingTop: "60px", borderRadius: '4px' }}>
-            <Card.Img variant="top" src={selectedPlace.photo} alt={selectedPlace.name} />
-            <Card.Body>
-              <Card.Title>{selectedPlace.name}</Card.Title>
-              <Card.Text>{selectedPlace.description}</Card.Text>
-              <button onClick={() => setSelectedPlace(null)} style={{
-                padding: '6px 12px', backgroundColor: '#6c757d', color: 'white',
-                border: 'none', borderRadius: '4px'
-              }}>
-                Close
-              </button>
+            <FaTimes
+              onClick={() => setSelectedPlace(null)}
+              style={{
+                position: 'absolute', top: '10px', right: '10px', cursor: 'pointer',
+                color: '#6c757d', fontSize: '20px'
+              }}
+            />
+            <Card.Img className='location-card-image' variant="top" src={selectedPlace.photo} alt={selectedPlace.name} />
+            <Card.Body className='location-card-body'>
+              <Card.Title className='location-card-title'>{selectedPlace.name}</Card.Title>
+              <Card.Text className='location-card-description'>{selectedPlace.description}</Card.Text>
+              {selectedPlace.opening_hours && (
+                <Card.Text className='location-card-opening-hours'>
+                  <strong>Opening Hours:</strong>
+                  <ul>
+                    {selectedPlace.opening_hours.map((hour, index) => (
+                      <li key={index}>{hour}</li>
+                    ))}
+                  </ul>
+                </Card.Text>
+              )}
+              {selectedPlace.user_ratings_total && (
+                <Card.Text className='location-card-user-ratings'>
+                  <strong>User Ratings Total:</strong> {selectedPlace.user_ratings_total}
+                </Card.Text>
+              )}
+              {selectedPlace.price_level && (
+                <Card.Text className='location-card-price-level'>
+                  <strong>Price Level:</strong> {selectedPlace.price_level}
+                </Card.Text>
+              )}
+              {selectedPlace.website && (
+                <Card.Text className='location-card-website'>
+                  <strong>Website:</strong> <a href={selectedPlace.website} target="_blank" rel="noopener noreferrer">{selectedPlace.website}</a>
+                </Card.Text>
+              )}
+              {selectedPlace.phone_number && (
+                <Card.Text className='location-card-phone-number'>
+                  <strong>Phone Number:</strong> {selectedPlace.phone_number}
+                </Card.Text>
+              )}
             </Card.Body>
           </Card>
         </div>
