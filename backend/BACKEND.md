@@ -1,5 +1,4 @@
 TODOS: 
--add how problems solving down in readme, encoder
 -add github of nika 
 -CHECK DATA VISUALIZATION 
 
@@ -9,8 +8,8 @@ TODOS:
 - [Introduction](#introduction)
 - [Features](#features)
 - [Use Case](#usecase)
-- [Problems](#problems)
-- [PDF_Report](#pdfreport)
+- [Challenges](#challenges)
+- [PNG_Report](#pdfreport)
 - [Technologies Used](#technologies-used)
 - [Contributors](#contributors)
 - [Data set](#dataset)
@@ -55,16 +54,17 @@ In any project of this nature, unforeseen problems are bound to arise. It was cr
 - **Event Names**: Our target feature, the event names, often referred to the same or similar events but were written differently. To address this, we encoded the event names and merged similar events, ensuring consistency in our data.
 
 
-## PDF_Report 
+## PNG_Report 
 In the following we will provide some pdf files and their explaination. 
-- **Pie Chart: New and Returning Tourists**: fill
-   You can view the PDF [here](./PDF/pie_chart_new_return.pdf).
-- **Pie Chart: New and Returning Tourists**: fill
-   You can view the PDF [here](./PDF/pie_chart_new_return.pdf).
-- **Pie Chart: New and Returning Tourists**: fill
-   You can view the PDF [here](./PDF/pie_chart_new_return.pdf).
-- **Pie Chart: New and Returning Tourists**: fill
-   You can view the PDF [here](./PDF/pie_chart_new_return.pdf).
+- **Plot after rebalancing the data**: [here](./PNG/after.png).
+
+- **Plot before rebalancing the data**:[here](./PNG/before.png).
+
+- **Plot of event frequency by visitor type**: [here](./PNG/event_frequency.png).
+
+- **Scatter Plot of Visit count vs. target**: [here](./PNG/scatter_visit_count_target.png).
+- **TreeMap Plot Visitor Types Countries**: [here](./PNG/treemap_visitor_types_countries.png).
+
 
 ## Technologies Used
 - **Python** 
