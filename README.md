@@ -99,20 +99,28 @@ In any project of this nature, unforeseen problems are bound to arise. It was cr
 
 ## PNG_Report 
 In the following we will provide some pdf files and their explaination. 
-- **Plot after rebalancing the data**: [here](./PNG/after.png).
+- **Plot after rebalancing the data**: 
+![Logo](./backend/PNG/after.png)  
+.
 
-- **Plot before rebalancing the data**:[here](./PNG/before.png).
+- **Plot before rebalancing the data**:
+![here](./backend/PNG/before.png).
 
-- **Demographic Map of the Datapoints**:[here](./PNG/demographic_map.png).
+- **Demographic Map of the Datapoints**:
+![here](./backend/PNG/demographic_map.png).
 
-- **Plot of event frequency by visitor type**: [here](./PNG/event_frequency.png).
+- **Plot of event frequency by visitor type**: 
+![here](./backend/PNG/event_frequency.png).
 
-- **Heatmap of visitor types and countries**:[here](./PNG/heatmap_visitor_types_country.png).
+- **Heatmap of visitor types and countries**:
+![here](./backend/PNG/heatmap_visitor_types_country.png).
 
 - **Pie Chart of new and returning tourists**:[here](./PNG/pie_chart_new_return.png).
 
-- **Scatter Plot of Visit count vs. target**: [here](./PNG/scatter_visit_count_target.png).
-- **TreeMap Plot Visitor Types Countries**: [here](./PNG/treemap_visitor_types_countries.png).
+- **Scatter Plot of Visit count vs. target**: 
+![here](./backend/PNG/scatter_visit_count_target.png).
+- **TreeMap Plot Visitor Types Countries**: 
+![here](./backend/PNG/treemap_visitor_types_countries.png).
 
 
 ## Technologies Used
