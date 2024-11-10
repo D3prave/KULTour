@@ -16,14 +16,28 @@ function MapComponent() {
   const [places, setPlaces] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredPlaces, setFilteredPlaces] = useState([]);
+  const [category, setCategory] = useState('');
 
   useEffect(() => {
     axios.get('https://ipapi.co/json/')
-      .then(response => console.log('User Country:', response.data.country_name))
+      .then(response => {
+        const countryName = response.data.country_name;
+        console.log('User Country:', countryName);
+        // fetchCategory(countryName.toLowerCase());
+        fetchCategory("albania");
+      })
       .catch(error => console.error('Error fetching user location', error));
   }, []);
 
-  const category = 'bar';
+  const fetchCategory = (countryName) => {
+    axios.post('http://127.0.0.1:5000/category', { user_id: countryName })
+      .then(response => {
+        const category = response.data.category;
+        setCategory(category);
+        console.log('Category:', category);
+      })
+      .catch(error => console.error('Error fetching category', error));
+  };
 
   useEffect(() => {
     axios.get('data.GeoJSON')
@@ -32,12 +46,14 @@ function MapComponent() {
   }, []);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/place?category=${category}`)
-      .then(response => {
-        setPlaces(response.data);
-        setFilteredPlaces(response.data);
-      })
-      .catch(error => console.error('Error fetching places', error));
+    if (category) {
+      axios.get(`http://localhost:5001/api/place?category=${category}`)
+        .then(response => {
+          setPlaces(response.data);
+          setFilteredPlaces(response.data);
+        })
+        .catch(error => console.error('Error fetching places', error));
+    }
   }, [category]);
 
   useEffect(() => {
