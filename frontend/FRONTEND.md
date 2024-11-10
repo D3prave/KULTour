@@ -65,6 +65,6 @@ This is the main component that renders the map and handles user interactions.
 - **Eternals** - GitHub_Repository: `https://github.com/denishotii/TourismTechnologyFestival`
 
 - **Southik Nath Banerjee** - GitHub: `Southik Nath Banerjee`
-- **Veronika Rybak** - GitHub: `CoraEpiro`
+- **Veronika Rybak** - GitHub: `vrnccr`
 - **Denis Hoti** - GitHub: `denishotii`
 

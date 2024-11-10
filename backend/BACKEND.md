@@ -1,7 +1,3 @@
-TODOS: 
--add github of nika 
--CHECK DATA VISUALIZATION 
-
 # Project Title: Personalization by culture and personality 
 
 ## Table of Contents
@@ -82,7 +78,7 @@ In the following we will provide some pdf files and their explaination.
 
 - **Jakub Wisniewski** - GitHub: `D3prave`
 - **Lukas Lang** - GitHub: `GezaLang`
-- **Ali Guliyev** - GitHub: `fill that`
+- **Ali Guliyev** - GitHub: `CoraEpiro`
 
 
 
