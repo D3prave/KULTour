@@ -1,6 +1,6 @@
 TODOS: 
 -add how problems solving down in readme, encoder
--add github 
+-add github of nika 
 -CHECK DATA VISUALIZATION 
 
 # Project Title: Personalization by culture and personality 
@@ -82,9 +82,9 @@ In the following we will provide some pdf files and their explaination.
 
 - **Jakub Wisniewski** - GitHub: `D3prave`
 - **Lukas Lang** - GitHub: `GezaLang`
-- **Teammate 6** - GitHub: `teammate3`
+- **Ali Guliyev** - GitHub: `fill that`
 - **Southik Nath Banerjee** - GitHub: `Southik Nath Banerjee`
-- **Veronika ** - GitHub: `teammate3`
+- **Veronika Rybak** - GitHub: `CoraEpiro`
 - **Denis Hoti** - GitHub: `denishotii`
 
 
