@@ -91,7 +91,7 @@ def get_category():
     recommendations_df = collab_filtering.get_recommendations()
     user_recommendations = recommendations_df[recommendations_df['country'] == user_data['user_id']]
     category = user_recommendations['eventName'].iloc[0] if not user_recommendations.empty else "No recommendations available"
-    return jsonify({'category': category})
+    return {'category': category}
 
 if __name__ == '__main__':
     app.run(debug=True)
