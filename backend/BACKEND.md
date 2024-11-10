@@ -56,7 +56,7 @@ In any project of this nature, unforeseen problems are bound to arise. It was cr
 
 - **Small Dataset**: More data is always preferable for machine learning tasks. However, our dataset was relatively small, with around 250 data points after cleaning. To enhance the reliability of our algorithm, we upsampled the training data.
 
-- **Unbalanced Dataset**: The dataset was highly imbalanced, with approximately 85% of the data points representing Austria, while other countries were significantly underrepresented. We used SMOTE (Synthetic Minority Over-sampling Technique) to balance the dataset.
+- **Unbalanced Dataset**: The dataset was highly imbalanced, with approximately 85% of the data points representing Austria, while other countries were significantly underrepresented. 
 
 - **Event Names**: Our target feature, the event names, often referred to the same or similar events but were written differently. To address this, we encoded the event names and merged similar events, ensuring consistency in our data.
 
