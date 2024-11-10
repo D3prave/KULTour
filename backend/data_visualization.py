@@ -13,12 +13,37 @@ features, target = loader.get_features_and_target()
 
 #%%exploration of data 
 
+
+#Austria vs other countries
+## Load the data
+#data = pd.read_csv('backend/prepared_data.csv')
+#
+## Separate Austria from other countries
+#austria_data = data[data['country'] == 'Austria']
+#other_countries_data = data[data['country'] != 'Austria']
+#
+## Aggregate visit counts for Austria and other countries
+#austria_visit_counts = austria_data.groupby('eventName (actionDetails 1)')['visitCount'].sum().reset_index()
+#other_countries_visit_counts = other_countries_data.groupby('country')['visitCount'].sum().reset_index()
+#
+#plt.figure(figsize=(14, 8))
+#sns.barplot(x='eventName (actionDetails 1)', y='visitCount', data=austria_visit_counts, color='blue', label='Austria')
+#sns.barplot(x='country', y='visitCount', data=other_countries_visit_counts, color='red', label='Other Countries')
+#
+#plt.title('Visit Counts: Austria vs Other Countries')
+#plt.xlabel('Event Name / Country')
+#plt.ylabel('Visit Count')
+#plt.legend()
+#plt.xticks(rotation=90)
+#plt.show()
+
 # pie chart of visitor types (very reasonable)
 plt.figure(figsize=(8, 8), num=1)
 data_frame['visitorType'].value_counts().plot.pie(autopct='%1.1f%%', colors=sns.color_palette('pastel'))
 plt.title('Proportion of Visitor Types')
 plt.ylabel('')
 plt.show()
+plt.savefig('pie_chart_new_return.pdf', format='pdf')
 
 ## Bar Plot visitor types 
 #plt.figure(figsize=(10, 6), num=2)   #reasonable but pie is nicer 
@@ -29,12 +54,13 @@ plt.show()
 #plt.show()
 
 # Scatter Plot visit count vs. target
-plt.figure(figsize=(10, 6), num=4) #reasonable
+plt.figure(figsize=(10, 6), num=2) #reasonable
 plt.scatter(x=x_train['visitCount'], y=y_train)
 plt.title('Visit Count vs. Target')
 plt.xlabel('Visit Count')
 plt.ylabel('Target')
 plt.show()
+plt.savefig('scatter_plot.pdf', format='pdf')
 
 # cat plot of visit count by continent and visitor type (quite reasonable)
 g = sns.catplot(data=data_frame, kind='bar', x='continent', y='visitCount', hue='visitorType', height=6, aspect=2)
