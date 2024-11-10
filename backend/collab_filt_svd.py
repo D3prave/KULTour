@@ -95,3 +95,8 @@ class CollaborativeFiltering:
         recommendations_df = self.get_recommendations()
         recommendations_df.to_csv(output_file, index=False)
         print(f"Recommendations have been saved to {output_file}")
+        
+# Usage
+#collab_filtering = CollaborativeFiltering('backend/prepared_data.csv')
+#collab_filtering.get_recommendations()
+#collab_filtering.save_recommendations('recommendations.csv')
