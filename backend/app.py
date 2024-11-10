@@ -1,11 +1,13 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 import pickle
 from collab_filt_svd import CollaborativeFiltering
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 # Initialize the CollaborativeFiltering object
-collab_filtering = CollaborativeFiltering('prepared_data.csv')
+collab_filtering = CollaborativeFiltering('backend/prepared_data.csv')
 
 # Define Resources
 @app.route('/data', methods=['GET'])
@@ -41,5 +43,4 @@ def get_category():
     return jsonify({'category': category})
 
 if __name__ == '__main__':
-    app.run(debug=True)
-
+    app.run(debug=True, port=5000)
