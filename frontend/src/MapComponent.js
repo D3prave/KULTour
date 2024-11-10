@@ -25,7 +25,7 @@ function MapComponent() {
   const category = 'bar';
 
   useEffect(() => {
-    axios.get('/geojson/austria.geojson')
+    axios.get('data.GeoJSON')
       .then(response => setAustriaGeoJson(response.data))
       .catch(error => console.error('Error loading the GeoJSON file', error));
   }, []);
@@ -85,22 +85,21 @@ function MapComponent() {
       </div>
 
       <MapContainer center={[47.5162, 14.5501]} zoom={7.3} style={{ height: "100vh", width: "100%" }}>
-        <LayersControl position="topright">
-         
-          <BaseLayer name="Google Streets">
-            <TileLayer
-              url="http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
-              maxZoom={20}
-              subdomains={['mt0', 'mt1', 'mt2', 'mt3']}
-            />
-          </BaseLayer>
-          <BaseLayer name="Satellite">
-            <TileLayer
-              url="http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"
-              maxZoom={20}
-              subdomains={['mt0', 'mt1', 'mt2', 'mt3']}
-            />
-          </BaseLayer>
+      <LayersControl position="topright">
+        <BaseLayer name="Google Streets" checked={true}>
+          <TileLayer
+            url="http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
+            maxZoom={20}
+            subdomains={['mt0', 'mt1', 'mt2', 'mt3']}
+          />
+        </BaseLayer>
+        <BaseLayer name="Satellite">
+          <TileLayer
+            url="http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"
+            maxZoom={20}
+            subdomains={['mt0', 'mt1', 'mt2', 'mt3']}
+          />
+        </BaseLayer>
           
 
           {filteredPlaces.map((place) => (
