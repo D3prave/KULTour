@@ -113,13 +113,32 @@ function MapComponent() {
             >
               <Popup>
                 <div>
-                  <h6>{place.name}</h6>
-                  <p>{place.description}</p>
+                  <h6 style={{
+                    margin: '10px 0',
+                    fontSize: '16px',
+                    fontWeight: 'bold',
+                    textAlign: 'center',
+                    color: '#333',  // Dark color for better contrast
+                    textTransform: 'uppercase',  // To make it stand out more
+                  }}>{place.name}</h6>
                   <button
                     onClick={() => handleViewDetails(place)}
                     style={{
-                      display: 'flex', alignItems: 'center', padding: '8px',
-                      backgroundColor: '#007bff', color: 'white', border: 'none', borderRadius: '4px'
+                      alignItems: 'center', // Center-align all child elements (name and button)
+                      display: 'flex',
+                      justifyContent: 'center',
+                      padding: '6px 12px', // Reduced padding for a smaller button
+                      backgroundColor: '#007bff',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '4px',
+                      fontSize: '10px', // Smaller font size
+                      fontWeight: '600',
+                      cursor: 'pointer',
+                      transition: 'background-color 0.3s ease',
+                      marginTop: '1 0px',  // Adds space above the button
+                      width: 'auto',  // Smaller font size
+   
                     }}
                   >
                     View Details
