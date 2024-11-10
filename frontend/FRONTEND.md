@@ -22,7 +22,7 @@ To set up the project locally, follow these steps:
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/yourusername/tourism-personalization.git
-.... 
+
 2. **If npm is installed, check:**:
 ```bash
    npm -v
