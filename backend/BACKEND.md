@@ -3,7 +3,7 @@ add how problems solving down in readme, encoder
 add github 
 API kinda weird  
 CHECK DATA VISUALIZATION 
-DO COMMENTS 
+DO COMMENTS for the code. 
 
 # Project Title: Personalization by culture and personality 
 
