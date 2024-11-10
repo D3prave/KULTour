@@ -43,13 +43,13 @@ df = df[df['eventName (actionDetails 1)'] != 'poi_bahnhof']
 # print(df['country'].unique())
 # print("Updated DataFrame with only selected columns:")
 # print(df)
-df['eventName (actionDetails 1)'] = df['eventName (actionDetails 1)'].str.replace(r'(?i).*advent.*', 'adventmarkt', regex=True)
+df['eventName (actionDetails 1)'] = df['eventName (actionDetails 1)'].str.replace(r'(?i).*advent.*', 'christmas market', regex=True)
 df['eventName (actionDetails 1)'] = df['eventName (actionDetails 1)'].str.replace(r'(?i).*(kuli|gastro).*', 'restaurant', regex=True)
 df['eventName (actionDetails 1)'] = df['eventName (actionDetails 1)'].str.replace(r'(?i).*(hostel|hotel).*', 'hotel', regex=True)
 df['eventName (actionDetails 1)'] = df['eventName (actionDetails 1)'].str.replace(r'(?i).*(gesundheit|krankenhaus|poi_notdienste|poi_arzt_zahnarzt).*', 'hospital', regex=True)
 df['eventName (actionDetails 1)'] = df['eventName (actionDetails 1)'].str.replace(r'(?i).*(kultur|poi_archaeologische_staette|poi_bildungseinrichtungen).*', 'museum', regex=True)
-df['eventName (actionDetails 1)'] = df['eventName (actionDetails 1)'].str.replace(r'(?i).*(poi_badegewaesser|poi_hallenbad).*', 'swimming', regex=True)
-df['eventName (actionDetails 1)'] = df['eventName (actionDetails 1)'].str.replace(r'(?i).*(poi_bauwerke_gebaeude|poi_natur-sehenswuerdigkeiten|poi_sehenswuerdigkeiten|poi_sonstige_natur-sehenswuerdigkeit|poi_aussichtswarte_aussichtspunkt_aussichtsturm).*', 'sehenswuerdigkeiten', regex=True)
+df['eventName (actionDetails 1)'] = df['eventName (actionDetails 1)'].str.replace(r'(?i).*(poi_badegewaesser|poi_hallenbad|baden).*', 'swimming', regex=True)
+df['eventName (actionDetails 1)'] = df['eventName (actionDetails 1)'].str.replace(r'(?i).*(poi_bauwerke_gebaeude|poi_natur-sehenswuerdigkeiten|poi_sehenswuerdigkeiten|poi_sonstige_natur-sehenswuerdigkeit|poi_aussichtswarte_aussichtspunkt_aussichtsturm).*', 'attractions', regex=True)
 df['eventName (actionDetails 1)'] = df['eventName (actionDetails 1)'].str.replace(r'(?i).*(poi_bekleidung_und_mode|poi_einkaufen).*', 'shopping', regex=True)
 df['eventName (actionDetails 1)'] = df['eventName (actionDetails 1)'].str.replace(r'(?i).*(poi_parkmoeglichkeit_gratis|poi_parkmoeglichkeit_kostenpflichtig).*', 'parking', regex=True)
 df['eventName (actionDetails 1)'] = df['eventName (actionDetails 1)'].str.replace(r'(?i).*(poi_tierpark_wildpark_zoo).*', 'zoo', regex=True)
@@ -59,7 +59,7 @@ df['eventName (actionDetails 1)'] = df['eventName (actionDetails 1)'].str.replac
 df['eventName (actionDetails 1)'] = df['eventName (actionDetails 1)'].str.replace(r'(?i).*(poi_reitstall|reiten).*', 'horse riding', regex=True)
 df['eventName (actionDetails 1)'] = df['eventName (actionDetails 1)'].str.replace(r'^event', 'activity', regex=True)
 df['eventName (actionDetails 1)'] = df['eventName (actionDetails 1)'].str.replace(r'(?i).*(activity_vortraege|activity_vergnuegungsveranstaltung|activity_sonstige_vergnuegungsveranstaltung|activity_sonstige_tour|activity_sonstige_musikveranstaltung|activity_kurs|activity_konzert|activity_brauchtumsveranstaltung|activity_bauernmarkt|activity_ball_tanzveranstaltung).*', 'activity', regex=True)
-
+df['eventName (actionDetails 1)'] = df['eventName (actionDetails 1)'].str.replace(r'(?i).*(familie).*', 'family', regex=True)
 df = df[~df['eventName (actionDetails 1)'].str.startswith('poi')]
 
 df.sort_values(by='eventName (actionDetails 1)', inplace=True)
