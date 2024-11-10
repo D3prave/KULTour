@@ -42,5 +42,16 @@ def get_category():
     category = user_recommendations['eventName'].iloc[0] if not user_recommendations.empty else "No recommendations available"
     return jsonify({'category': category})
 
+# New route to update first_time_visitor variable
+@app.route('/update_first_time_visitor', methods=['POST'])
+def update_first_time_visitor():
+    global first_time_visitor
+    data = request.get_json()
+    if 'first_time_visitor' in data:
+        first_time_visitor = data['first_time_visitor']
+        return jsonify({'status': 'success', 'first_time_visitor': first_time_visitor}), 200
+    else:
+        return jsonify({'status': 'error', 'message': 'Invalid data'}), 400
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
