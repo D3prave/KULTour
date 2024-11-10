@@ -20,22 +20,33 @@ Before diving into the modeling, we'll thoroughly investigate our dataset, perfo
 Our ultimate aim is to provide an API endpoint for the Frontend Team, enabling data-driven decisions for each individual user to be accessed through the web application.
 
 
-## Use Case 
-Here's how to handle the files:
+## Use Case
 
-1. **app.py**: app.py is the API-access point for our backend code..
+Here's a guide on how to handle the various files in our project:
 
-2. **collab_filt_svd.py**: In this file, we provide a class that performs collaborative filtering using singular value decomposition.
+1. **app.py**: 
+   This file serves as the API access point for our backend code. It handles requests and directs them to the appropriate functions.
 
-3. **data_loader.py**: This file is solely to provide access for the dataset. In this case, we use prepared_data.csv.
+2. **collab_filt_svd.py**: 
+   This file contains a class that performs collaborative filtering using Singular Value Decomposition (SVD). It is the core of our recommendation system.
 
-4. **data_prep.py**: In this file, we are cleaning the data, removing empty columns/features, and merging similar inputs for event_name.
+3. **data_loader.py**: 
+   The primary purpose of this file is to provide access to the dataset, specifically `prepared_data.csv`. While it was intended to be used in multiple files such as `collab_filt_svd.py` and `data_prep.py`, it ended up being primarily utilized in `data_visualization.py`. Although we could have managed without it, our focus was on addressing more critical tasks.
 
-5. **data_visualization.py**: The name says it all: This file is about visualizing the data. We plotted several graphs. However, the dataset is not that big and hence, a lot of plots are not suitable as there are just too few datapoints.
+4. **data_prep.py**: 
+   This script is responsible for cleaning the data. It removes empty columns and features, and merges similar inputs for the `event_name` column to ensure consistency and accuracy in our dataset.
 
-6. **original_data.csv**: This is the csv file for the originally provided data.
+5. **data_visualization.py**: 
+   As the name suggests, this file is dedicated to visualizing the data. We plotted several graphs to gain insights. However, due to the small size of the dataset, many plots are limited in their usefulness.
 
-7. **prepared_data.csv**: This is our ready data set that we used for our algorithm. 
+6. **original_data.csv**: 
+   This is the CSV file containing the originally provided data. It serves as the raw data source before any preprocessing.
+
+7. **prepared_data.csv**: 
+   This is the cleaned and preprocessed dataset that we use for our algorithms. It is the final version of the data after all transformations.
+
+8. **requirements.txt**: 
+   This file lists the dependencies required for the API. It ensures that all necessary libraries are installed for the project to run smoothly.
 
 ## Challenges
 
@@ -56,7 +67,13 @@ In the following we will provide some pdf files and their explaination.
 
 - **Plot before rebalancing the data**:[here](./PNG/before.png).
 
+- **Demographic Map of the Datapoints**:[here](./PNG/demographic_map.png).
+
 - **Plot of event frequency by visitor type**: [here](./PNG/event_frequency.png).
+
+- **Heatmap of visitor types and countries**:[here](./PNG/heatmap_visitor_types_country.png).
+
+- **Pie Chart of new and returning tourists**:[here](./PNG/pie_chart_new_return.png).
 
 - **Scatter Plot of Visit count vs. target**: [here](./PNG/scatter_visit_count_target.png).
 - **TreeMap Plot Visitor Types Countries**: [here](./PNG/treemap_visitor_types_countries.png).
