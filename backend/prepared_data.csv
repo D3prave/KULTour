@@ -1,248 +1,248 @@
 eventName (actionDetails 1),visitorType,visitCount,continent,country
-activity,new,1,Europa,Österreich
-activity,new,1,Europa,Österreich
-activity,new,1,Europa,Österreich
-activity,new,1,Europa,Österreich
-activity,new,1,Europa,Österreich
-activity,new,1,Europa,Österreich
-activity,new,1,Europa,Österreich
-activity,new,1,Europa,Frankreich
-activity,new,1,Südamerika,Peru
-activity,new,1,Europa,Belgien
-activity,new,1,Europa,Österreich
-activity,new,1,Europa,Österreich
-activity,returning,2,Europa,Österreich
-activity,returning,2,Europa,Österreich
-activity,new,1,Europa,Österreich
-activity,new,1,Europa,Deutschland
-activity,new,1,Europa,Österreich
-activity,new,1,Europa,Deutschland
-activity,new,1,Europa,Österreich
-attractions,new,1,Europa,Österreich
-attractions,new,1,Europa,Österreich
-attractions,new,1,Europa,Österreich
-attractions,returning,2,Europa,Österreich
-attractions,returning,2,Europa,Österreich
-attractions,new,1,Europa,Österreich
-attractions,new,1,Europa,Österreich
-attractions,new,1,Europa,Deutschland
-attractions,new,1,Europa,Österreich
-attractions,new,1,Europa,Österreich
-bike,new,1,Europa,Österreich
-bike,new,1,Europa,Österreich
-bike,new,1,Europa,Tschechien
-bike,new,1,Europa,Belgien
-bike,returning,77,Europa,Luxemburg
-bike,returning,2,Europa,Österreich
-bike,returning,2,Europa,Österreich
-bike,new,1,Europa,Belgien
-bike,new,1,Europa,Österreich
-bike,new,1,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,returning,2,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,returning,2,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,new,1,Europa,Deutschland
-christmas market,returning,2,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,returning,3,Europa,Österreich
-christmas market,returning,2,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,new,1,Europa,Dänemark
-christmas market,new,1,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,returning,2,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,returning,5,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,new,1,Europa,Vereinigtes Königreich
-christmas market,new,1,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,new,1,Europa,Deutschland
-christmas market,new,1,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,new,1,Europa,Österreich
-christmas market,returning,2,Europa,Österreich
-christmas market,new,1,Europa,Deutschland
-christmas market,new,1,Europa,Österreich
-family,new,1,Europa,Österreich
-family,new,1,Europa,Österreich
-family,new,1,Europa,Österreich
-family,new,1,Europa,Österreich
-family,new,1,Europa,Österreich
-family,returning,4,Europa,Österreich
-family,new,1,Europa,Österreich
-family,new,1,Europa,Österreich
-family,new,1,Europa,Österreich
-family,new,1,Europa,Österreich
-family,new,1,Europa,Österreich
-hike,returning,2,Europa,Österreich
-hike,new,1,Europa,Deutschland
-hike,new,1,Europa,Österreich
-hike,new,1,Europa,Österreich
-hike,new,1,Europa,Deutschland
-hike,new,1,Europa,Österreich
-hike,new,1,Europa,Österreich
-hike,returning,5,Europa,Österreich
-hike,new,1,Europa,Österreich
-hike,returning,2,Europa,Österreich
-hike,returning,3,Europa,Österreich
-hike,new,1,Europa,Österreich
-hike,new,1,Europa,Österreich
-hike,new,1,Europa,Österreich
-hike,new,1,Europa,Österreich
-hike,new,1,Europa,Österreich
-hike,new,1,Europa,Österreich
-hike,new,1,Europa,Österreich
-hike,new,1,Europa,Österreich
-hike,new,1,Europa,Österreich
-hike,new,1,Europa,Österreich
-hike,new,1,Europa,Deutschland
-hike,returning,2,Europa,Österreich
-hike,new,1,Europa,Österreich
-hike,returning,2,Europa,Österreich
-hike,new,1,Europa,Österreich
-hike,returning,57,Europa,Österreich
-hike,new,1,Europa,Österreich
-hike,returning,2,Europa,Österreich
-hike,new,1,Europa,Österreich
-hike,new,1,Europa,Österreich
-hike,new,1,Europa,Deutschland
-hike,returning,4,Europa,Österreich
-hike,returning,2,Europa,Österreich
-hike,returning,4,Europa,Österreich
-hike,new,1,Europa,Deutschland
-hike,new,1,Europa,Österreich
-horse riding,returning,2,Europa,Österreich
-horse riding,returning,2,Europa,Österreich
-horse riding,new,1,Europa,Österreich
-hospital,new,1,Europa,Österreich
-hospital,new,1,Europa,Österreich
-hospital,new,1,Europa,Österreich
-hospital,new,1,Europa,Österreich
-hospital,new,1,Europa,Österreich
-hospital,new,1,Europa,Österreich
-hospital,new,1,Europa,Österreich
-hotel,new,1,Europa,Österreich
-hotel,new,1,Europa,Österreich
-hotel,new,1,Europa,Deutschland
-hotel,returning,2,Europa,Österreich
-hotel,new,1,Europa,Österreich
-hotel,new,1,Europa,Österreich
-hotel,returning,4,Europa,Albanien
-hotel,new,1,Europa,Österreich
-hotel,returning,7,Europa,Österreich
-hotel,new,1,Europa,Österreich
-hotel,new,1,Europa,Österreich
-hotel,new,1,Europa,Deutschland
-hotel,returning,2,Europa,Österreich
-museum,new,1,Europa,Österreich
-museum,new,1,Europa,Österreich
-museum,new,1,Europa,Deutschland
-museum,new,1,Europa,Österreich
-museum,new,1,Europa,Deutschland
-museum,new,1,Europa,Österreich
-museum,new,1,Europa,Österreich
-museum,new,1,Europa,Deutschland
-museum,new,1,Europa,Österreich
-museum,returning,2,Asien,Vereinigte Arabische Emirate
-museum,new,1,Europa,Österreich
-museum,new,1,Europa,Österreich
-museum,new,1,Europa,Österreich
-museum,new,1,Europa,Österreich
-museum,new,1,Europa,Österreich
-museum,new,1,Europa,Österreich
+activity,new,1,Europa,austria
+activity,new,1,Europa,austria
+activity,new,1,Europa,austria
+activity,new,1,Europa,austria
+activity,new,1,Europa,austria
+activity,new,1,Europa,austria
+activity,new,1,Europa,austria
+activity,new,1,Europa,france
+activity,new,1,Südamerika,peru
+activity,new,1,Europa,belgium
+activity,new,1,Europa,austria
+activity,new,1,Europa,austria
+activity,returning,2,Europa,austria
+activity,returning,2,Europa,austria
+activity,new,1,Europa,austria
+activity,new,1,Europa,germany
+activity,new,1,Europa,austria
+activity,new,1,Europa,germany
+activity,new,1,Europa,austria
+attractions,new,1,Europa,austria
+attractions,new,1,Europa,austria
+attractions,new,1,Europa,austria
+attractions,returning,2,Europa,austria
+attractions,returning,2,Europa,austria
+attractions,new,1,Europa,austria
+attractions,new,1,Europa,austria
+attractions,new,1,Europa,germany
+attractions,new,1,Europa,austria
+attractions,new,1,Europa,austria
+bike,new,1,Europa,austria
+bike,new,1,Europa,austria
+bike,new,1,Europa,czech republic
+bike,new,1,Europa,belgium
+bike,returning,77,Europa,luxembourg
+bike,returning,2,Europa,austria
+bike,returning,2,Europa,austria
+bike,new,1,Europa,belgium
+bike,new,1,Europa,austria
+bike,new,1,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,returning,2,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,returning,2,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,new,1,Europa,germany
+christmas market,returning,2,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,returning,3,Europa,austria
+christmas market,returning,2,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,new,1,Europa,denmark
+christmas market,new,1,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,returning,2,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,returning,5,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,new,1,Europa,united kingdom
+christmas market,new,1,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,new,1,Europa,germany
+christmas market,new,1,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,new,1,Europa,austria
+christmas market,returning,2,Europa,austria
+christmas market,new,1,Europa,germany
+christmas market,new,1,Europa,austria
+family,new,1,Europa,austria
+family,new,1,Europa,austria
+family,new,1,Europa,austria
+family,new,1,Europa,austria
+family,new,1,Europa,austria
+family,returning,4,Europa,austria
+family,new,1,Europa,austria
+family,new,1,Europa,austria
+family,new,1,Europa,austria
+family,new,1,Europa,austria
+family,new,1,Europa,austria
+hike,returning,2,Europa,austria
+hike,new,1,Europa,germany
+hike,new,1,Europa,austria
+hike,new,1,Europa,austria
+hike,new,1,Europa,germany
+hike,new,1,Europa,austria
+hike,new,1,Europa,austria
+hike,returning,5,Europa,austria
+hike,new,1,Europa,austria
+hike,returning,2,Europa,austria
+hike,returning,3,Europa,austria
+hike,new,1,Europa,austria
+hike,new,1,Europa,austria
+hike,new,1,Europa,austria
+hike,new,1,Europa,austria
+hike,new,1,Europa,austria
+hike,new,1,Europa,austria
+hike,new,1,Europa,austria
+hike,new,1,Europa,austria
+hike,new,1,Europa,austria
+hike,new,1,Europa,austria
+hike,new,1,Europa,germany
+hike,returning,2,Europa,austria
+hike,new,1,Europa,austria
+hike,returning,2,Europa,austria
+hike,new,1,Europa,austria
+hike,returning,57,Europa,austria
+hike,new,1,Europa,austria
+hike,returning,2,Europa,austria
+hike,new,1,Europa,austria
+hike,new,1,Europa,austria
+hike,new,1,Europa,germany
+hike,returning,4,Europa,austria
+hike,returning,2,Europa,austria
+hike,returning,4,Europa,austria
+hike,new,1,Europa,germany
+hike,new,1,Europa,austria
+horse riding,returning,2,Europa,austria
+horse riding,returning,2,Europa,austria
+horse riding,new,1,Europa,austria
+hospital,new,1,Europa,austria
+hospital,new,1,Europa,austria
+hospital,new,1,Europa,austria
+hospital,new,1,Europa,austria
+hospital,new,1,Europa,austria
+hospital,new,1,Europa,austria
+hospital,new,1,Europa,austria
+hotel,new,1,Europa,austria
+hotel,new,1,Europa,austria
+hotel,new,1,Europa,germany
+hotel,returning,2,Europa,austria
+hotel,new,1,Europa,austria
+hotel,new,1,Europa,austria
+hotel,returning,4,Europa,albania
+hotel,new,1,Europa,austria
+hotel,returning,7,Europa,austria
+hotel,new,1,Europa,austria
+hotel,new,1,Europa,austria
+hotel,new,1,Europa,germany
+hotel,returning,2,Europa,austria
+museum,new,1,Europa,austria
+museum,new,1,Europa,austria
+museum,new,1,Europa,germany
+museum,new,1,Europa,austria
+museum,new,1,Europa,germany
+museum,new,1,Europa,austria
+museum,new,1,Europa,austria
+museum,new,1,Europa,germany
+museum,new,1,Europa,austria
+museum,returning,2,Asien,united arab emirates
+museum,new,1,Europa,austria
+museum,new,1,Europa,austria
+museum,new,1,Europa,austria
+museum,new,1,Europa,austria
+museum,new,1,Europa,austria
+museum,new,1,Europa,austria
 museum,new,1,Europa,Türkei
-museum,returning,2,Europa,Albanien
-museum,returning,6,Europa,Österreich
-museum,new,1,Europa,Österreich
-museum,new,1,Europa,Bosnien und Herzegowina
-parking,new,1,Europa,Österreich
-parking,returning,2,Europa,Österreich
-parking,new,1,Europa,Frankreich
-restaurant,new,1,Afrika,Nigeria
-restaurant,returning,2,Europa,Österreich
-restaurant,new,1,Europa,Österreich
-restaurant,new,1,Europa,Österreich
-restaurant,new,1,Europa,Österreich
-restaurant,new,1,Europa,Österreich
-restaurant,new,1,Europa,Österreich
-restaurant,returning,2,Europa,Österreich
-restaurant,new,1,Europa,Deutschland
-restaurant,new,1,Europa,Österreich
-restaurant,returning,3,Europa,Österreich
-restaurant,new,1,Europa,Österreich
-restaurant,new,1,Europa,Deutschland
-restaurant,returning,2,Europa,Österreich
-restaurant,new,1,Europa,Österreich
-restaurant,new,1,Europa,Österreich
-restaurant,new,1,Europa,Österreich
-restaurant,new,1,Europa,Deutschland
-restaurant,new,1,Europa,Österreich
-restaurant,new,1,Europa,Österreich
-restaurant,new,1,Europa,Österreich
-restaurant,new,1,Europa,Österreich
-restaurant,new,1,Europa,Österreich
-restaurant,new,1,Europa,Deutschland
-restaurant,new,1,Europa,Albanien
-restaurant,returning,20,Europa,Österreich
-restaurant,new,1,Europa,Österreich
-restaurant,new,1,Europa,Österreich
-restaurant,new,1,Europa,Österreich
-restaurant,new,1,Europa,Österreich
-restaurant,returning,2,Europa,Österreich
-restaurant,new,1,Europa,Österreich
-restaurant,returning,2,Europa,Albanien
-restaurant,new,1,Europa,Österreich
-restaurant,new,1,Europa,Ungarn
-restaurant,new,1,Europa,Österreich
-restaurant,returning,2,Europa,Österreich
-restaurant,returning,7,Europa,Österreich
-restaurant,new,1,Europa,Österreich
-restaurant,new,1,Europa,Österreich
-restaurant,new,1,Europa,Österreich
-restaurant,new,1,Europa,Deutschland
-restaurant,new,1,Europa,Österreich
-restaurant,new,1,Europa,Österreich
-restaurant,returning,2,Europa,Österreich
-restaurant,returning,2,Europa,Österreich
-restaurant,new,1,Europa,Österreich
-restaurant,new,1,Europa,Deutschland
-shopping,new,1,Europa,Deutschland
-shopping,new,1,Europa,Österreich
-shopping,new,1,Europa,Österreich
-shopping,new,1,Europa,Österreich
-shopping,new,1,Europa,Österreich
-shopping,new,1,Europa,Österreich
-shopping,new,1,Europa,Österreich
-shopping,new,1,Europa,Österreich
-shopping,returning,2,Europa,Österreich
-shopping,new,1,Europa,Österreich
-swimming,new,1,Europa,Österreich
-swimming,new,1,Europa,Österreich
-swimming,returning,2,Europa,Österreich
-swimming,new,1,Europa,Österreich
-swimming,new,1,Europa,Österreich
-swimming,new,1,Europa,Österreich
-trip,new,1,Europa,Österreich
-trip,new,1,Europa,Österreich
-trip,new,1,Europa,Österreich
-wellness,new,1,Europa,Österreich
-zoo,new,1,Europa,Deutschland
+museum,returning,2,Europa,albania
+museum,returning,6,Europa,austria
+museum,new,1,Europa,austria
+museum,new,1,Europa,bosnia
+parking,new,1,Europa,austria
+parking,returning,2,Europa,austria
+parking,new,1,Europa,france
+restaurant,new,1,Afrika,nigeria
+restaurant,returning,2,Europa,austria
+restaurant,new,1,Europa,austria
+restaurant,new,1,Europa,austria
+restaurant,new,1,Europa,austria
+restaurant,new,1,Europa,austria
+restaurant,new,1,Europa,austria
+restaurant,returning,2,Europa,austria
+restaurant,new,1,Europa,germany
+restaurant,new,1,Europa,austria
+restaurant,returning,3,Europa,austria
+restaurant,new,1,Europa,austria
+restaurant,new,1,Europa,germany
+restaurant,returning,2,Europa,austria
+restaurant,new,1,Europa,austria
+restaurant,new,1,Europa,austria
+restaurant,new,1,Europa,austria
+restaurant,new,1,Europa,germany
+restaurant,new,1,Europa,austria
+restaurant,new,1,Europa,austria
+restaurant,new,1,Europa,austria
+restaurant,new,1,Europa,austria
+restaurant,new,1,Europa,austria
+restaurant,new,1,Europa,germany
+restaurant,new,1,Europa,albania
+restaurant,returning,20,Europa,austria
+restaurant,new,1,Europa,austria
+restaurant,new,1,Europa,austria
+restaurant,new,1,Europa,austria
+restaurant,new,1,Europa,austria
+restaurant,returning,2,Europa,austria
+restaurant,new,1,Europa,austria
+restaurant,returning,2,Europa,albania
+restaurant,new,1,Europa,austria
+restaurant,new,1,Europa,hungary
+restaurant,new,1,Europa,austria
+restaurant,returning,2,Europa,austria
+restaurant,returning,7,Europa,austria
+restaurant,new,1,Europa,austria
+restaurant,new,1,Europa,austria
+restaurant,new,1,Europa,austria
+restaurant,new,1,Europa,germany
+restaurant,new,1,Europa,austria
+restaurant,new,1,Europa,austria
+restaurant,returning,2,Europa,austria
+restaurant,returning,2,Europa,austria
+restaurant,new,1,Europa,austria
+restaurant,new,1,Europa,germany
+shopping,new,1,Europa,germany
+shopping,new,1,Europa,austria
+shopping,new,1,Europa,austria
+shopping,new,1,Europa,austria
+shopping,new,1,Europa,austria
+shopping,new,1,Europa,austria
+shopping,new,1,Europa,austria
+shopping,new,1,Europa,austria
+shopping,returning,2,Europa,austria
+shopping,new,1,Europa,austria
+swimming,new,1,Europa,austria
+swimming,new,1,Europa,austria
+swimming,returning,2,Europa,austria
+swimming,new,1,Europa,austria
+swimming,new,1,Europa,austria
+swimming,new,1,Europa,austria
+trip,new,1,Europa,austria
+trip,new,1,Europa,austria
+trip,new,1,Europa,austria
+wellness,new,1,Europa,austria
+zoo,new,1,Europa,germany
