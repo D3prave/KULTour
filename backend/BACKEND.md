@@ -83,9 +83,7 @@ In the following we will provide some pdf files and their explaination.
 - **Jakub Wisniewski** - GitHub: `D3prave`
 - **Lukas Lang** - GitHub: `GezaLang`
 - **Ali Guliyev** - GitHub: `fill that`
-- **Southik Nath Banerjee** - GitHub: `Southik Nath Banerjee`
-- **Veronika Rybak** - GitHub: `CoraEpiro`
-- **Denis Hoti** - GitHub: `denishotii`
+
 
 
 ## Data set 
