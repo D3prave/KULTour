@@ -166,3 +166,13 @@ The original data set was published by the organisators of the Tourism Technolog
     └── .env.example           <- API Keys
 
 ---
+
+
+## Collaborators
+
+- [Denis Hoti](https://www.linkedin.com/in/denishoti/)
+- [Veronika Rybak](https://www.linkedin.com/in/veronika-rybak-55379a337/)
+- [Jakub Wisniewski](https://www.linkedin.com/in/jakub-wiśniewski-720150337/)
+- [Ali Guliyev](https://www.linkedin.com/in/ali-guliyev-389837238/)
+- [Southik Banarjee](https://www.linkedin.com/in/southik-nath-banerjee-74077a202/)
+- [Lukas Lang](https://www.linkedin.com/in/lukas-lang-26628730b/)
