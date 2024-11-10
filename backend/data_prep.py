@@ -72,7 +72,7 @@ df['country'] = df['country'].str.replace(r'(?i).*frankreich.*', 'france', regex
 df['country'] = df['country'].str.replace(r'(?i).*niederlande.*', 'netherlands', regex=True)
 df['country'] = df['country'].str.replace(r'(?i).*belgien.*', 'belgium', regex=True)
 df['country'] = df['country'].str.replace(r'(?i).*luxemburg.*', 'luxembourg', regex=True)
-df['country'] = df['country'].str.replace(r'(?i).*liechtenstein.*', 'liechtenstein', regex=True)
+df['country'] = df['country'].str.replace(r'(?i).*Türkei.*', 'turkey', regex=True)
 df['country'] = df['country'].str.replace(r'(?i).*spanien.*', 'spain', regex=True)
 df['country'] = df['country'].str.replace(r'(?i).*portugal.*', 'portugal', regex=True)
 df['country'] = df['country'].str.replace(r'(?i).*griechenland.*', 'greece', regex=True)
