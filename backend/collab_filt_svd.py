@@ -1,36 +1,97 @@
-#%% imports 
-import numpy as np 
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn.model_selection import train_test_split, cross_validate
 from surprise import Dataset, Reader, SVD
-from data_loader import DataLoader
+from surprise.model_selection import train_test_split, cross_validate
+import random
 
-loader = DataLoader('BACKEND/prepared_data.csv')
+class CollaborativeFiltering:
+    def __init__(self, file_path, first_time_visitor=False):
+        self.data = pd.read_csv(file_path)
+        self.data.rename(columns={'eventName (actionDetails 1)': 'eventName'}, inplace=True)
+        
+        # Handle underrepresented countries
+        self.balance_data()
+        
+        self.reader = Reader(rating_scale=(1, 10))
+        self.surprise_data = Dataset.load_from_df(self.balanced_data[['country', 'eventName', 'visitCount']], self.reader)
+        
+        # Train-test split
+        self.trainset, self.testset = train_test_split(self.surprise_data, test_size=0.2)
+        
+        # Initialize and train the SVD model
+        self.svd = SVD()
+        self.cross_val_results = cross_validate(self.svd, self.surprise_data, measures=['RMSE', 'MAE'], cv=5, verbose=True)
+        self.svd.fit(self.trainset)
 
-x_train, x_test, y_train, y_test = loader.get_train_test_data()
-data_frame = loader.get_dataframe()
-features, target = loader.get_features_and_target()
-#full_dataset = loader.get_full_dataset()
+        # Initialize allowed categories and visitor status
+        self.allowed_categories = ["HOTEL", "RESTAURANT", "MUSEUM", "ATTRACTIONS"]
+        self.first_time_visitor = first_time_visitor
 
-# Example can delete later 
-print(x_train.head())
-print(data_frame.head())
+    def balance_data(self):
+        # Check the distribution of each country
+        country_counts = self.data['country'].value_counts()
+        print("Initial distribution of countries:\n", country_counts)
 
+        # Find the maximum count of data points for any country to use as a target for balancing
+        max_count = country_counts.max()
 
+        # List to store new data points for underrepresented countries
+        new_data_points = []
 
-#%% training using SVD 
-algo = SVD()
-pipe
-cross_validate(algo, data_train, measures=['RMSE', 'MAE'], cv=3, verbose=True)
+        # Generate synthetic data for minority countries
+        for country, count in country_counts.items():
+            if count < max_count:
+                # Calculate how many additional data points are needed
+                additional_points = max_count - count
+                for _ in range(additional_points):
+                    event = random.choice(self.data['eventName'].unique())
+                    visit_count = random.randint(1, 10)  # Randomly generate visitCount within the given rating scale
+                    new_data_points.append({'country': country, 'eventName': event, 'visitCount': visit_count})
 
-# Fit the model on the full dataset
-trainset = data.build_full_trainset()
-algo.fit(data_train)
+        # Convert the new data points to a DataFrame and append to the original data
+        synthetic_data = pd.DataFrame(new_data_points)
+        self.balanced_data = pd.concat([self.data, synthetic_data], ignore_index=True)
 
-# Example prediction for a user and location
-user_id = 'user1'
-location_id = 'location1'
-prediction = algo.predict(user_id, location_id)
-print(prediction)
+        # Verify the new distribution
+        new_country_counts = self.balanced_data['country'].value_counts()
+        print("New distribution of countries:\n", new_country_counts)
+
+    def get_recommendations(self):
+        unique_countries = self.balanced_data['country'].unique()
+        all_events = self.balanced_data['eventName'].unique()
+        recommendations_list = []
+
+        for country in unique_countries:
+            recommendations = []
+            for event in all_events:
+                # Filter events based on allowed categories if the visitor is a first-time visitor
+                if self.first_time_visitor:
+                    # Check if the event belongs to one of the allowed categories for first-time visitors
+                    if not any(category in event.upper() for category in self.allowed_categories):
+                        continue  # Skip events not in the allowed categories
+
+                # Predict the estimated interest for each event
+                est = self.svd.predict(uid=country, iid=event).est
+                recommendations.append((event, est))
+            
+            recommendations.sort(key=lambda x: x[1], reverse=True)
+            top_recommendations = recommendations[:5]
+
+            for event, score in top_recommendations:
+                recommendations_list.append({
+                    'country': country,
+                    'eventName': event,
+                    'estimated_interest': score
+                })
+        
+            # Print the recommendations for the current country
+            print(f"Top recommendations for {country}:")
+            for event, score in top_recommendations:
+                print(f"  Event: {event}, Estimated Interest: {score:.2f}")
+            print()  # Blank line for readability
+
+        return pd.DataFrame(recommendations_list)
+
+    def save_recommendations(self, output_file):
+        recommendations_df = self.get_recommendations()
+        recommendations_df.to_csv(output_file, index=False)
+        print(f"Recommendations have been saved to {output_file}")

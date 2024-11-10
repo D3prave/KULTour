@@ -1,3 +1,15 @@
+TODOS: 
+CHECK API 
+CHECK DATA VISUALIZATION 
+DO README 
+DO COMMENTS 
+IF SOMEONE IS NEW AT AUSTRIA, ONLY RECOMMEND MUSEUM, SIGHTSEEING, RESTAURANT
+
+WHAT WE ALSO DID: 
+data manipulation
+We encoded the features. 
+data visualization add description 
+
 # Project Title: Ski Resort Management System
 
 ## Overview
@@ -61,11 +73,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ################
 
-data manipulation
-We encoded the features. 
-data visualization add description 
-
-STILL TODO: 
-finish collab_filtering 
-have a look at the visual
-finish the api => we need the collab in a class

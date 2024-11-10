@@ -1,10 +1,10 @@
 import React from 'react';
-import MapComponent from './MapComponent';  // Import the MapComponent
+import MapComponent from './MapComponent';  // Import your MapComponent
+import './App.css';  // Import the CSS file
 
 function App() {
   return (
     <div className="App">
-      <h1>Sights to see</h1>
       <MapComponent /> {/* Render the MapComponent here */}
     </div>
   );

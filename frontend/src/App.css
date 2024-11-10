@@ -36,3 +36,134 @@
     transform: rotate(360deg);
   }
 }
+
+/* Add this CSS to your main stylesheet */
+.gray-country {
+  color: gray !important;
+  fill: gray !important;
+  opacity: 0.6;
+  fill-opacity: 0.3;
+}
+/* App.css */
+h1 {
+  font-family: 'Roboto', sans-serif; /* Modern font family */
+  font-size: 3rem; /* Larger size for the title */
+  font-weight: 700; /* Bold title */
+  text-align: center; /* Center align */
+  background: linear-gradient(45deg, #ff6b6b, #f7b42c, #fc4a1a); /* Gradient background */
+  -webkit-background-clip: text; /* Clip background to text */
+  color: transparent; /* Make the text transparent to show gradient */
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  text-transform: uppercase; /* Uppercase letters */
+  letter-spacing: 2px; /* Slight letter spacing */
+  animation: fadeIn 2s ease-in-out; /* Add a fade-in effect */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional: Style the container */
+.App {
+  background-color: white; /* Light background */
+  padding: 0px;
+}
+/* App.css */
+
+/* Hero Section */
+/* App.css */
+
+/* Hero Section */
+.hero {
+  background-image: url('https://source.unsplash.com/1600x900/?tourism,travel'); /* Change the URL to any touristic image */
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(133, 129, 129);
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Soft shadow for readability */
+  font-family: 'Lora', serif; /* Elegant font for a tourism site */
+  font-size: 3.5rem;
+  text-align: center;
+  letter-spacing: 1.5px;
+  padding: 0 20px;
+}
+
+/* Title Style */
+h1 {
+  color: black;
+  font-size: 3rem; /* Adjust font size */
+  text-transform: uppercase; /* Uppercase for emphasis */
+  font-weight: 800;
+  margin: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+/* Call to Action Button */
+.cta-button {
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #fc4a1a;
+}
+
+.searchSection {
+  position: absolute;
+  top: 20px;
+  left: 60px;
+  z-index: 1000;
+}
+
+.searchBar {
+  border-radius: 15px;
+  padding: 5px;
+  width: 200px;
+  height: 25px;
+  border: none;
+  outline: none;
+}
+
+.location-card {
+  position: absolute;
+  top: 10%;
+  right: 2%;
+  z-index: 1000;
+  width: 18rem;
+  height: 50vh;
+  padding-left: 20px;
+}
+
+.location-inner-card{
+  border-radius: 15px;
+  background-color: white;
+  padding-left: 10px;  
+  padding-right: 10px;
+  height: 100%;
+}
