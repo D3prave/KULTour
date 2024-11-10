@@ -1,50 +1,66 @@
-TODOS: 
-add how problems solving down in readme, encoder
-add github 
-API kinda weird  
-CHECK DATA VISUALIZATION 
-DO COMMENTS for the code. 
-
 # Project Title: Personalization by culture and personality 
 
 ## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
 - [Use Case](#usecase)
-- [Problems](#problems)
+- [Challenges](#challenges)
+- [PNG_Report](#pdfreport)
 - [Technologies Used](#technologies-used)
 - [Contributors](#contributors)
 - [Data set](#dataset)
 
 ## Introduction
-Welcome to the Backend-ReadME-file of the Eternals for the 4th Challenge -Personalization by culture and personality. Millions of tourists from all over the world visit Austria every year. We want to optimize their experience in Austria by making data-based assumptions about their preferences. We will tackle this exciting challenge using machine learning. We will create a Collaboration Filtering with Singular Value Decomposition. But before, we will have to investigate our dataset a bit, do some data visualization to get a rough feeling about our dataset, and of course clean it properly. 
-In the end we want to provide an API-endpoint for the Frontend-Team, such that the data-based decision for every individual person can be accessed in the web application. 
+Welcome to the Backend ReadMe file for the Eternals' 4th Challenge: Personalization by Culture and Personality.
+
+Every year, millions of tourists from around the world visit Austria. Our goal is to enhance their experience by making data-driven assumptions about their preferences. To tackle this exciting challenge, we will employ machine learning techniques, specifically using Collaborative Filtering with Singular Value Decomposition (SVD).
+
+Before diving into the modeling, we'll thoroughly investigate our dataset, perform data visualization to gain initial insights, and ensure the data is properly cleaned.
+
+Our ultimate aim is to provide an API endpoint for the Frontend Team, enabling data-driven decisions for each individual user to be accessed through the web application.
+
 
 ## Use Case 
-Here's how to use the Ski Resort Management System:
+Here's how to handle the files:
 
-1. **app.py**: The `DataLoader` class in `data_loader.py` handles data loading and preprocessing. It reads data from a CSV file, splits it into training and testing sets, and prepares the data for model training.
+1. **app.py**: app.py is the API-access point for our backend code..
 
-2. **collab_filt_svd.py**: Use `train_model.py` to train the recommendation model. It utilizes collaborative filtering to provide personalized location recommendations based on user data.
+2. **collab_filt_svd.py**: In this file, we provide a class that performs collaborative filtering using singular value decomposition.
 
-3. **data_loader.py**: `analyze_data.py` allows for the analysis of visitor data, providing insights into visitor patterns and behavior.
+3. **data_loader.py**: This file is solely to provide access for the dataset. In this case, we use prepared_data.csv.
 
-4. **data_prep.py**: `analyze_data.py` allows for the analysis of visitor data, providing insights into visitor patterns and behavior.
+4. **data_prep.py**: In this file, we are cleaning the data, removing empty columns/features, and merging similar inputs for event_name.
 
-5. **data_visualization.py**: `analyze_data.py` allows for the analysis of visitor data, providing insights into visitor patterns and behavior.
+5. **data_visualization.py**: The name says it all: This file is about visualizing the data. We plotted several graphs. However, the dataset is not that big and hence, a lot of plots are not suitable as there are just too few datapoints.
 
-6. **original_data.csv**: `analyze_data.py` allows for the analysis of visitor data, providing insights into visitor patterns and behavior.
+6. **original_data.csv**: This is the csv file for the originally provided data.
 
-7. **output.csv**: `analyze_data.py` allows for the analysis of visitor data, providing insights into visitor patterns and behavior.
+7. **prepared_data.csv**: This is our ready data set that we used for our algorithm. 
 
-8. **prepared_data.csv**: `analyze_data.py` allows for the analysis of visitor data, providing insights into visitor patterns and behavior.
+## Challenges
 
-## Problems 
-As always in such a Challenge, there will be (unpredictable) problems that might occur in the process of the project. It was important that we faced the problems and didn´t resign on them and in the end, we solved all of them in our individual way: 
-- **'Sparse' Features**:   The data set provided a lot of "empty" features. Additionally, a lot of them weren´t correlated to our problem. We got rid of those sparse columns while cleaning and investing the data.
-- **Small Data Set**:      The more data the better. The main problem for our machine  learning task was a more or less small data set of around 250 after the cleansing. We managed to upsample the train data set to get a more reliable algorithm.
-- **Unbalanced Data Set**: Another quite tricky option was the unbalanceness of the data set. Roughly 85% of the cleaned data consisted of Austrian data points, whereas other countries are drastically underrepresented. SMOTE took care of that. 
-- **Event_names**: Our target feature, the event names often referred to same or similar things, but have been written in different ways. In order for that, we encoded this feature and basically merged similar events. 
+In any project of this nature, unforeseen problems are bound to arise. It was crucial for us to face these issues head-on and find solutions tailored to our specific needs. Here’s how we addressed the main challenges:
+
+- **Sparse Features**: Our dataset contained numerous "empty" features that were not relevant to our problem. We tackled this by thoroughly cleaning the data, removing the sparse columns, and focusing only on the features that were pertinent.
+
+- **Small Dataset**: More data is always preferable for machine learning tasks. However, our dataset was relatively small, with around 250 data points after cleaning. To enhance the reliability of our algorithm, we upsampled the training data.
+
+- **Unbalanced Dataset**: The dataset was highly imbalanced, with approximately 85% of the data points representing Austria, while other countries were significantly underrepresented. We used SMOTE (Synthetic Minority Over-sampling Technique) to balance the dataset.
+
+- **Event Names**: Our target feature, the event names, often referred to the same or similar events but were written differently. To address this, we encoded the event names and merged similar events, ensuring consistency in our data.
+
+
+## PNG_Report 
+In the following we will provide some pdf files and their explaination. 
+- **Plot after rebalancing the data**: [here](./PNG/after.png).
+
+- **Plot before rebalancing the data**:[here](./PNG/before.png).
+
+- **Plot of event frequency by visitor type**: [here](./PNG/event_frequency.png).
+
+- **Scatter Plot of Visit count vs. target**: [here](./PNG/scatter_visit_count_target.png).
+- **TreeMap Plot Visitor Types Countries**: [here](./PNG/treemap_visitor_types_countries.png).
+
 
 ## Technologies Used
 - **Python** 
@@ -59,12 +75,12 @@ As always in such a Challenge, there will be (unpredictable) problems that might
 
 ## Contributors
 - **Eternals** - GitHub_Repository: `https://github.com/denishotii/TourismTechnologyFestival`
-- **Denis Hoti** - GitHub: `denishotii`
+
 - **Jakub Wisniewski** - GitHub: `D3prave`
 - **Lukas Lang** - GitHub: `GezaLang`
-- **Teammate 4** - GitHub: `teammate3`
-- **Teammate 5** - GitHub: `teammate3`
-- **Teammate 6** - GitHub: `teammate3`
+- **Ali Guliyev** - GitHub: `CoraEpiro`
+
+
 
 ## Data set 
 The original data set was published by the organisators of the Tourism Technology Hackathon 2024 on a privat basis. We promise to delete the data set after the 10.11.2024.  

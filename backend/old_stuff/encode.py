@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 import pandas as pd
 
 data = pd.read_csv('original_data.csv', encoding='UTF-16')
-
+    
 columns_to_keep = ['eventName (actionDetails 1)', 'visitorType', 'visitCount', 'continent', 'country', 'visitorId']
 data = data.loc[:, columns_to_keep]
 
