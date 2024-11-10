@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 import pickle
-from collaborative_filtering import CollaborativeFiltering
+from collab_filt_svd import CollaborativeFiltering
 
 app = Flask(__name__)
 
