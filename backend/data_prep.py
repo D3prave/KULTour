@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv('original_data.csv', encoding='utf-16')
+df = pd.read_csv('backend/original_data.csv', encoding='utf-16', low_memory=False)
 # print(f"Number of columns before dropping: {df.shape[1]}")
 # df.dropna(axis=1, how='all', inplace=True)
 # print(f"Number of columns after dropping: {df.shape[1]}")
