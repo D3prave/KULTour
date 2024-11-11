@@ -7,8 +7,8 @@
 - [Challenges](#challenges)
 - [PNG_Report](#pdfreport)
 - [Technologies Used](#technologies-used)
-- [Contributors](#contributors)
 - [Data set](#dataset)
+- [Collaborators](#collaborators)
 
 ## About KULTour
 Attention: Do you want to explore the world? KULTour is the perfect app for you!
@@ -145,22 +145,6 @@ In the following we will provide some pdf files and their explaination.
 - **GET `http://localhost:5001/api/place?category={category}`**: Fetches places based on the recommended category.
 - **GET `Google API`**: Fetches places description, pictures and addresses from Google Maps
 - [Google Places API](https://developers.google.com/maps/documentation/places/web-service/overview)
-
-## Contributors
-- **Eternals** - GitHub_Repository: `https://github.com/denishotii/TourismTechnologyFestival`
-
-- **Southik Nath Banerjee** - GitHub: `Southik Nath Banerjee`
-- **Veronika Rybak** - GitHub: `vrnccr`
-- **Denis Hoti** - GitHub: `denishotii`
-
-## Contributors
-- **Eternals** - GitHub_Repository: `https://github.com/denishotii/TourismTechnologyFestival`
-
-- **Jakub Wisniewski** - GitHub: `D3prave`
-- **Lukas Lang** - GitHub: `GezaLang`
-- **Ali Guliyev** - GitHub: `CoraEpiro`
-
-
 
 ## Data set 
 The original data set was published by the organisators of the Tourism Technology Hackathon 2024 on a privat basis. We promise to delete the data set after the 10.11.2024.  
