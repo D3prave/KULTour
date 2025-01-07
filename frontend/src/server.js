@@ -14,7 +14,7 @@ app.get('/api/place', async (req, res) => {
     const response = await axios.get(`https://maps.googleapis.com/maps/api/place/textsearch/json`, {
       params: {
         query: category,
-        key: process.env.GOOGLE_PLACES_API_KEY,
+        key: process.env.GOOGLE_API_KEY,
         location: '47.5162,14.5501',  // Center of Austria
         radius: 50000  // 50 km radius to cover the whole Austria
       }
@@ -25,7 +25,7 @@ app.get('/api/place', async (req, res) => {
     const places = filteredPlaces.map(place => ({
       name: place.name,
       location: place.geometry.location,
-      photo: place.photos ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${place.photos[0].photo_reference}&key=process.env.GOOGLE_PLACES_API_KEY` : null,
+      photo: place.photos ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${place.photos[0].photo_reference}&key=${process.env.GOOGLE_API_KEY}` : null,
       rating: place.rating,
       description: place.formatted_address,
       opening_hours: place.opening_hours ? place.opening_hours.weekday_text : null,
