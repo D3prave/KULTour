@@ -47,12 +47,6 @@ function MapComponent() {
   };
 
   useEffect(() => {
-    axios.get('data.GeoJSON')
-      .then(response => setAustriaGeoJson(response.data))
-      .catch(error => console.error('Error loading the GeoJSON file', error));
-  }, []);
-
-  useEffect(() => {
     if (category) {
       axios.get(`http://localhost:5001/api/place?category=${category}`)
         .then(response => {
@@ -77,24 +71,6 @@ function MapComponent() {
     setSearchTerm(event.target.value);
   };
 
-  const getColor = (population) => {
-    if (population > 100000000) return 'darkred';
-    else if (population > 50000000) return 'orange';
-    else if (population > 10000000) return 'yellow';
-    return 'lightgreen';
-  };
-
-  const countryStyle = (feature) => {
-    const population = feature.properties?.population || 0;
-    const color = getColor(population);
-    return {
-      color: 'black',
-      weight: 3,
-      opacity: 1,
-      fillOpacity: 0.5,
-      fillColor: color,
-    };
-  };
 
   return (
     <div style={{ position: 'relative', height: '100vh' }}>
@@ -179,12 +155,6 @@ function MapComponent() {
               </Popup>
             </Marker>
           ))}
-
-          {austriaGeoJson && (
-            <Overlay name="Austria GeoJSON">
-              <GeoJSON data={austriaGeoJson} style={countryStyle} />
-            </Overlay>
-          )}
         </LayersControl>
       </MapContainer>
 
