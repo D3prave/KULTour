@@ -4,7 +4,7 @@ import pickle
 from collab_filt_svd import CollaborativeFiltering
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}}, supports_credentials=True)  # Enable CORS for all routes
 
 # Initialize the CollaborativeFiltering object
 collab_filtering = CollaborativeFiltering('backend/prepared_data.csv')
