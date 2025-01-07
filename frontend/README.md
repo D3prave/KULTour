@@ -65,15 +65,14 @@ Here's how to use the MapComponent:
 ### MapComponent
 This is the main component that renders the map and handles user interactions.
 
-- **State Management**: Manages the state of selected place, GeoJSON data, places, search term, filtered places, and category using `useState`.
-- **Effect Hooks**: Fetches user location, category, GeoJSON data, and places based on the category using `useEffect`.
-- **Map and Layers**: Uses `react-leaflet` components like `MapContainer`, `TileLayer`, `Marker`, `Popup`, `GeoJSON`, and `LayersControl` to display the map and layers.
+- **State Management**: Manages the state of selected place, places, search term, filtered places, and category using `useState`.
+- **Effect Hooks**: Fetches user location, category and places based on the category using `useEffect`.
+- **Map and Layers**: Uses `react-leaflet` components like `MapContainer`, `TileLayer`, `Marker`, `Popup` and `LayersControl` to display the map and layers.
 - **Search Functionality**: Filters places based on the search term entered by the user.
 
 ## Features
 - **User Location Detection**: Fetches the user's country based on their IP address.
 - **Category Fetching**: Determines the category of recommendations based on the user's country.
-- **GeoJSON Layer**: Loads and displays the GeoJSON data for Austria.
 - **Search and Filter**: Allows users to search for places by name.
 - **Detailed Information**: Displays detailed information about each place in a popup and a detailed card.
 
